@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4552504EFF74C498A75656C4 /* Pods_FBLA_TriviaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECFD187EAE53C64B0BDE36B /* Pods_FBLA_TriviaTests.framework */; };
+		615FAF62CB1E4614B243A622 /* Pods_FBLA_TriviaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F55C9BEB74FE1020363BE /* Pods_FBLA_TriviaUITests.framework */; };
 		E5119A0121EE4F1E00D46F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A0021EE4F1E00D46F36 /* AppDelegate.swift */; };
 		E5119A0621EE4F1E00D46F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5119A0421EE4F1E00D46F36 /* Main.storyboard */; };
 		E5119A0821EE4F2100D46F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5119A0721EE4F2100D46F36 /* Assets.xcassets */; };
@@ -26,6 +28,7 @@
 		E5119A4621EE761A00D46F36 /* FiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A4521EE761A00D46F36 /* FiveVC.swift */; };
 		E5119A4821EE762900D46F36 /* SixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A4721EE762900D46F36 /* SixVC.swift */; };
 		E5119A4B21EE775C00D46F36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5119A4A21EE775C00D46F36 /* GoogleService-Info.plist */; };
+		E873F4654812290D01CD1E3E /* Pods_FBLA_Trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4F7685D55D3B0CF5398285 /* Pods_FBLA_Trivia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B4F7685D55D3B0CF5398285 /* Pods_FBLA_Trivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBLA_Trivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2E7A967EC0B7B692C6629F /* Pods-FBLA TriviaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA TriviaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA TriviaUITests/Pods-FBLA TriviaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		437C035AC4839219FD0F836F /* Pods-FBLA Trivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA Trivia.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA Trivia/Pods-FBLA Trivia.release.xcconfig"; sourceTree = "<group>"; };
+		5ECFD187EAE53C64B0BDE36B /* Pods_FBLA_TriviaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBLA_TriviaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D66D6EE50E60FA9E4C67C5B /* Pods-FBLA TriviaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA TriviaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA TriviaTests/Pods-FBLA TriviaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BBD56451E348BA74600256C5 /* Pods-FBLA TriviaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA TriviaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA TriviaTests/Pods-FBLA TriviaTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF1BD8CF9E008187B614E747 /* Pods-FBLA Trivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA Trivia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA Trivia/Pods-FBLA Trivia.debug.xcconfig"; sourceTree = "<group>"; };
+		C03F55C9BEB74FE1020363BE /* Pods_FBLA_TriviaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBLA_TriviaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51199FD21EE4F1E00D46F36 /* FBLA Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FBLA Trivia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5119A0021EE4F1E00D46F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5119A0521EE4F1E00D46F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +82,7 @@
 		E5119A4521EE761A00D46F36 /* FiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveVC.swift; sourceTree = "<group>"; };
 		E5119A4721EE762900D46F36 /* SixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixVC.swift; sourceTree = "<group>"; };
 		E5119A4A21EE775C00D46F36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F88318BA2201D2CF0D748294 /* Pods-FBLA TriviaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA TriviaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA TriviaUITests/Pods-FBLA TriviaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E873F4654812290D01CD1E3E /* Pods_FBLA_Trivia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4552504EFF74C498A75656C4 /* Pods_FBLA_TriviaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +106,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615FAF62CB1E4614B243A622 /* Pods_FBLA_TriviaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92638D65AF04ABB853383932 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B4F7685D55D3B0CF5398285 /* Pods_FBLA_Trivia.framework */,
+				5ECFD187EAE53C64B0BDE36B /* Pods_FBLA_TriviaTests.framework */,
+				C03F55C9BEB74FE1020363BE /* Pods_FBLA_TriviaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E29CF4F04DAAEC47DA3D86B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BD8CF9E008187B614E747 /* Pods-FBLA Trivia.debug.xcconfig */,
+				437C035AC4839219FD0F836F /* Pods-FBLA Trivia.release.xcconfig */,
+				6D66D6EE50E60FA9E4C67C5B /* Pods-FBLA TriviaTests.debug.xcconfig */,
+				BBD56451E348BA74600256C5 /* Pods-FBLA TriviaTests.release.xcconfig */,
+				F88318BA2201D2CF0D748294 /* Pods-FBLA TriviaUITests.debug.xcconfig */,
+				2A2E7A967EC0B7B692C6629F /* Pods-FBLA TriviaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E51199F421EE4F1E00D46F36 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +143,8 @@
 				E5119A1421EE4F2100D46F36 /* FBLA TriviaTests */,
 				E5119A1F21EE4F2100D46F36 /* FBLA TriviaUITests */,
 				E51199FE21EE4F1E00D46F36 /* Products */,
+				E29CF4F04DAAEC47DA3D86B8 /* Pods */,
+				92638D65AF04ABB853383932 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5119A2521EE4F2100D46F36 /* Build configuration list for PBXNativeTarget "FBLA Trivia" */;
 			buildPhases = (
+				609976CD16D26B334D44E67B /* [CP] Check Pods Manifest.lock */,
 				E51199F921EE4F1E00D46F36 /* Sources */,
 				E51199FA21EE4F1E00D46F36 /* Frameworks */,
 				E51199FB21EE4F1E00D46F36 /* Resources */,
+				D87F424BE65CE3E7D637C009 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +259,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5119A2821EE4F2100D46F36 /* Build configuration list for PBXNativeTarget "FBLA TriviaTests" */;
 			buildPhases = (
+				1728D4ABD1F0D4CFB8B1EC8B /* [CP] Check Pods Manifest.lock */,
 				E5119A0D21EE4F2100D46F36 /* Sources */,
 				E5119A0E21EE4F2100D46F36 /* Frameworks */,
 				E5119A0F21EE4F2100D46F36 /* Resources */,
@@ -235,6 +278,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5119A2B21EE4F2100D46F36 /* Build configuration list for PBXNativeTarget "FBLA TriviaUITests" */;
 			buildPhases = (
+				D6DEC9D4493292651CB099EC /* [CP] Check Pods Manifest.lock */,
 				E5119A1821EE4F2100D46F36 /* Sources */,
 				E5119A1921EE4F2100D46F36 /* Frameworks */,
 				E5119A1A21EE4F2100D46F36 /* Resources */,
@@ -320,6 +364,83 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1728D4ABD1F0D4CFB8B1EC8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FBLA TriviaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		609976CD16D26B334D44E67B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FBLA Trivia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6DEC9D4493292651CB099EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FBLA TriviaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D87F424BE65CE3E7D637C009 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FBLA Trivia/Pods-FBLA Trivia-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBLA Trivia/Pods-FBLA Trivia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E51199F921EE4F1E00D46F36 /* Sources */ = {
@@ -510,6 +631,7 @@
 		};
 		E5119A2621EE4F2100D46F36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF1BD8CF9E008187B614E747 /* Pods-FBLA Trivia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +650,7 @@
 		};
 		E5119A2721EE4F2100D46F36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 437C035AC4839219FD0F836F /* Pods-FBLA Trivia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +669,7 @@
 		};
 		E5119A2921EE4F2100D46F36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D66D6EE50E60FA9E4C67C5B /* Pods-FBLA TriviaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -567,6 +691,7 @@
 		};
 		E5119A2A21EE4F2100D46F36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBD56451E348BA74600256C5 /* Pods-FBLA TriviaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -588,6 +713,7 @@
 		};
 		E5119A2C21EE4F2100D46F36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F88318BA2201D2CF0D748294 /* Pods-FBLA TriviaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -608,6 +734,7 @@
 		};
 		E5119A2D21EE4F2100D46F36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A2E7A967EC0B7B692C6629F /* Pods-FBLA TriviaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
