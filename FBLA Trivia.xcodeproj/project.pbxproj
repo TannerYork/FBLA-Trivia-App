@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		E5119A0121EE4F1E00D46F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A0021EE4F1E00D46F36 /* AppDelegate.swift */; };
-		E5119A0321EE4F1E00D46F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A0221EE4F1E00D46F36 /* ViewController.swift */; };
 		E5119A0621EE4F1E00D46F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5119A0421EE4F1E00D46F36 /* Main.storyboard */; };
 		E5119A0821EE4F2100D46F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5119A0721EE4F2100D46F36 /* Assets.xcassets */; };
 		E5119A0B21EE4F2100D46F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5119A0921EE4F2100D46F36 /* LaunchScreen.storyboard */; };
 		E5119A1621EE4F2100D46F36 /* FBLA_TriviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A1521EE4F2100D46F36 /* FBLA_TriviaTests.swift */; };
 		E5119A2121EE4F2100D46F36 /* FBLA_TriviaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A2021EE4F2100D46F36 /* FBLA_TriviaUITests.swift */; };
+		E5119A2F21EE501000D46F36 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A2E21EE501000D46F36 /* MainVC.swift */; };
+		E5119A3321EE6F8800D46F36 /* PlayfairDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5119A3221EE6F8800D46F36 /* PlayfairDisplay-Black.ttf */; };
+		E5119A3521EE751400D46F36 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A3421EE751400D46F36 /* OptionsVC.swift */; };
+		E5119A3721EE752D00D46F36 /* AdminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A3621EE752D00D46F36 /* AdminVC.swift */; };
+		E5119A3921EE754E00D46F36 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A3821EE754E00D46F36 /* PlayerVC.swift */; };
+		E5119A3B21EE758900D46F36 /* CategouriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A3A21EE758900D46F36 /* CategouriesVC.swift */; };
+		E5119A3E21EE75D100D46F36 /* OneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A3D21EE75D100D46F36 /* OneVC.swift */; };
+		E5119A4021EE75E100D46F36 /* TwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A3F21EE75E100D46F36 /* TwoVC.swift */; };
+		E5119A4221EE75F100D46F36 /* ThreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A4121EE75F100D46F36 /* ThreeVC.swift */; };
+		E5119A4421EE760300D46F36 /* FourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A4321EE760300D46F36 /* FourVC.swift */; };
+		E5119A4621EE761A00D46F36 /* FiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A4521EE761A00D46F36 /* FiveVC.swift */; };
+		E5119A4821EE762900D46F36 /* SixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A4721EE762900D46F36 /* SixVC.swift */; };
+		E5119A4B21EE775C00D46F36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5119A4A21EE775C00D46F36 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +48,6 @@
 /* Begin PBXFileReference section */
 		E51199FD21EE4F1E00D46F36 /* FBLA Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FBLA Trivia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5119A0021EE4F1E00D46F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5119A0221EE4F1E00D46F36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5119A0521EE4F1E00D46F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5119A0721EE4F2100D46F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5119A0A21EE4F2100D46F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +58,19 @@
 		E5119A1C21EE4F2100D46F36 /* FBLA TriviaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FBLA TriviaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5119A2021EE4F2100D46F36 /* FBLA_TriviaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLA_TriviaUITests.swift; sourceTree = "<group>"; };
 		E5119A2221EE4F2100D46F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5119A2E21EE501000D46F36 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		E5119A3221EE6F8800D46F36 /* PlayfairDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Black.ttf"; sourceTree = "<group>"; };
+		E5119A3421EE751400D46F36 /* OptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
+		E5119A3621EE752D00D46F36 /* AdminVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminVC.swift; sourceTree = "<group>"; };
+		E5119A3821EE754E00D46F36 /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
+		E5119A3A21EE758900D46F36 /* CategouriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategouriesVC.swift; sourceTree = "<group>"; };
+		E5119A3D21EE75D100D46F36 /* OneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneVC.swift; sourceTree = "<group>"; };
+		E5119A3F21EE75E100D46F36 /* TwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoVC.swift; sourceTree = "<group>"; };
+		E5119A4121EE75F100D46F36 /* ThreeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeVC.swift; sourceTree = "<group>"; };
+		E5119A4321EE760300D46F36 /* FourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourVC.swift; sourceTree = "<group>"; };
+		E5119A4521EE761A00D46F36 /* FiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveVC.swift; sourceTree = "<group>"; };
+		E5119A4721EE762900D46F36 /* SixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixVC.swift; sourceTree = "<group>"; };
+		E5119A4A21EE775C00D46F36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +122,13 @@
 			isa = PBXGroup;
 			children = (
 				E5119A0021EE4F1E00D46F36 /* AppDelegate.swift */,
-				E5119A0221EE4F1E00D46F36 /* ViewController.swift */,
+				E5119A3021EE501A00D46F36 /* ViewControllers */,
 				E5119A0421EE4F1E00D46F36 /* Main.storyboard */,
 				E5119A0721EE4F2100D46F36 /* Assets.xcassets */,
 				E5119A0921EE4F2100D46F36 /* LaunchScreen.storyboard */,
 				E5119A0C21EE4F2100D46F36 /* Info.plist */,
+				E5119A4A21EE775C00D46F36 /* GoogleService-Info.plist */,
+				E5119A3121EE6C8100D46F36 /* Resources */,
 			);
 			path = "FBLA Trivia";
 			sourceTree = "<group>";
@@ -123,6 +149,48 @@
 				E5119A2221EE4F2100D46F36 /* Info.plist */,
 			);
 			path = "FBLA TriviaUITests";
+			sourceTree = "<group>";
+		};
+		E5119A3021EE501A00D46F36 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5119A2E21EE501000D46F36 /* MainVC.swift */,
+				E5119A4921EE763200D46F36 /* Setup ViewControllers */,
+				E5119A3C21EE759B00D46F36 /* Categoury ViewControllers */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E5119A3121EE6C8100D46F36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E5119A3221EE6F8800D46F36 /* PlayfairDisplay-Black.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E5119A3C21EE759B00D46F36 /* Categoury ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5119A3D21EE75D100D46F36 /* OneVC.swift */,
+				E5119A3F21EE75E100D46F36 /* TwoVC.swift */,
+				E5119A4121EE75F100D46F36 /* ThreeVC.swift */,
+				E5119A4321EE760300D46F36 /* FourVC.swift */,
+				E5119A4521EE761A00D46F36 /* FiveVC.swift */,
+				E5119A4721EE762900D46F36 /* SixVC.swift */,
+			);
+			path = "Categoury ViewControllers";
+			sourceTree = "<group>";
+		};
+		E5119A4921EE763200D46F36 /* Setup ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5119A3421EE751400D46F36 /* OptionsVC.swift */,
+				E5119A3621EE752D00D46F36 /* AdminVC.swift */,
+				E5119A3821EE754E00D46F36 /* PlayerVC.swift */,
+				E5119A3A21EE758900D46F36 /* CategouriesVC.swift */,
+			);
+			path = "Setup ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5119A0B21EE4F2100D46F36 /* LaunchScreen.storyboard in Resources */,
+				E5119A3321EE6F8800D46F36 /* PlayfairDisplay-Black.ttf in Resources */,
+				E5119A4B21EE775C00D46F36 /* GoogleService-Info.plist in Resources */,
 				E5119A0821EE4F2100D46F36 /* Assets.xcassets in Resources */,
 				E5119A0621EE4F1E00D46F36 /* Main.storyboard in Resources */,
 			);
@@ -256,8 +326,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5119A0321EE4F1E00D46F36 /* ViewController.swift in Sources */,
+				E5119A4421EE760300D46F36 /* FourVC.swift in Sources */,
+				E5119A3E21EE75D100D46F36 /* OneVC.swift in Sources */,
+				E5119A4021EE75E100D46F36 /* TwoVC.swift in Sources */,
+				E5119A4821EE762900D46F36 /* SixVC.swift in Sources */,
+				E5119A4221EE75F100D46F36 /* ThreeVC.swift in Sources */,
 				E5119A0121EE4F1E00D46F36 /* AppDelegate.swift in Sources */,
+				E5119A3521EE751400D46F36 /* OptionsVC.swift in Sources */,
+				E5119A4621EE761A00D46F36 /* FiveVC.swift in Sources */,
+				E5119A3B21EE758900D46F36 /* CategouriesVC.swift in Sources */,
+				E5119A3721EE752D00D46F36 /* AdminVC.swift in Sources */,
+				E5119A2F21EE501000D46F36 /* MainVC.swift in Sources */,
+				E5119A3921EE754E00D46F36 /* PlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
