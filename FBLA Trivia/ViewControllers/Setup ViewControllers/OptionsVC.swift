@@ -16,15 +16,18 @@ class OptionsVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: Actions
+    
+    @IBAction func createGame(_ sender: Any) {
+        //Creates an alert for game creation and presents the alert
+        Alerts.presentCreateGameAlert(from: self)
     }
-    */
-
+    
+    @IBAction func joinGame(_ sender: Any) {
+        //Creates an alert for joining a game and then presenting the alert
+        Alerts.presentJoinGameAlert(from: self)
+    }
+    
+    @IBAction func unwindToOptionsVC(segue: UIStoryboardSegue) {
+    }
 }

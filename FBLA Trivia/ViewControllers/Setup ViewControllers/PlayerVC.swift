@@ -10,21 +10,57 @@ import UIKit
 
 class PlayerVC: UIViewController {
 
+    //MARK: Properties
+    @IBOutlet weak var playersTV: UITableView!
+    var updateChecker: ListenerRegistration!
+    var gameActivityChecker: ListenerRegistration!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        GameSession.shared.loadData(for: playersTV, in: self) { (bool) in
+            GameSession.shared.currentView = 1
+            self.updateChecker = GameSession.shared.checkForUpdates(for: self.playersTV)
+            self.gameActivityChecker = GameSession.shared.checkIfGameIsActivePlayer(from: self)
+        }
     }
-    */
+    
+    
+    //MARK: Actions
+    @IBAction func leaveGame(_ sender: Any) {
+        //Remove player from session and return them to the game options.
+        FirestoreData.shared.removePlayer(Auth.auth().currentUser!.displayName!, from: GameSession.shared.PlayerSession!) { (completion) in
+            if completion == true {
+                self.dismiss(animated: true)
+            } else {
+                print("ERROR!! Player was not remove from session!")
+            }
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! CategouriesVC
+        
+        destination.gameChecker = GameSession.shared.checkIfGameIsActive(from: destination)
+        self.updateChecker.remove()
+        self.gameActivityChecker.remove()
+    }
+}
 
+extension GamePlayerVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Number of players: \(GameSession.shared.players.count)")
+        return GameSession.shared.players.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell") as! PlayerCell
+        let player = GameSession.shared.players[indexPath.row]
+        cell.userNameLabel.text = player
+        return cell
+    }
 }

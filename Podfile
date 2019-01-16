@@ -7,7 +7,10 @@ target 'FBLA Trivia' do
 
   # Pods for FBLA Trivia
   pod 'Firebase/Core'
-  
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Facebook'
+  pod 'FirebaseUI/Google'
 
 
   target 'FBLA TriviaTests' do
