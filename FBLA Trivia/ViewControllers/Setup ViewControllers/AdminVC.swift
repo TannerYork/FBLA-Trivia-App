@@ -7,30 +7,31 @@
 //
 
 import UIKit
+import Firebase
 
 class AdminVC: UIViewController {
 
     //MARK: Properties
     @IBOutlet weak var playersTV: UITableView!
+    @IBOutlet weak var sessionIdLabel: UILabel!
+    
+    
     var updateChecker: ListenerRegistration!
     var gameActivityChecker: ListenerRegistration!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         GameSession.shared.loadData(for: playersTV, in: self) { (bool) in
-            GameSession.shared.currentView = 2
             self.updateChecker = GameSession.shared.checkForUpdates(for: self.playersTV)
             self.gameActivityChecker = GameSession.shared.checkIfGameIsActiveAdmin(from: self)
+            self.sessionIdLabel.text = GameSession.shared.AdminSession
         }
     }
     
     //MARK: Actions
     @IBAction func startGame(_ sender: Any) {
-        //Set session activity to true and perform segue to countDownVC
+        //Set session activity to true and perform segue to CategoriesVC
         FirestoreData.shared.startSession(from: self)
     }
     
@@ -54,7 +55,7 @@ class AdminVC: UIViewController {
     }
 }
 
-extension GameAdminVC: UITableViewDelegate, UITableViewDataSource {
+extension AdminVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Number of players: \(GameSession.shared.players.count)")

@@ -11,7 +11,7 @@ target 'FBLA Trivia' do
   pod 'Firebase/Auth'
   pod 'FirebaseUI/Facebook'
   pod 'FirebaseUI/Google'
-
+  pod 'SpinWheelControl'
 
   target 'FBLA TriviaTests' do
     inherit! :search_paths

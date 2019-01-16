@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PlayerVC: UIViewController {
 
@@ -21,7 +22,6 @@ class PlayerVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         GameSession.shared.loadData(for: playersTV, in: self) { (bool) in
-            GameSession.shared.currentView = 1
             self.updateChecker = GameSession.shared.checkForUpdates(for: self.playersTV)
             self.gameActivityChecker = GameSession.shared.checkIfGameIsActivePlayer(from: self)
         }
@@ -50,7 +50,7 @@ class PlayerVC: UIViewController {
     }
 }
 
-extension GamePlayerVC: UITableViewDelegate, UITableViewDataSource {
+extension PlayerVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Number of players: \(GameSession.shared.players.count)")

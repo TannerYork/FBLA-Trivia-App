@@ -8,13 +8,11 @@
 
 import Foundation
 import Firebase
-import Firestore
+
 
 class FirestoreData {
     static let shared = FirestoreData()
     static let data = Firestore.firestore()
-    static let storage = Storage.storage()
-    static let storageRef = storage.reference()
     let fileData = Data()
 
     func createSession(onComplete: @escaping (Bool, String) -> Void) {
@@ -54,7 +52,7 @@ class FirestoreData {
                 })
                 return
             }
-            view.performSegue(withIdentifier: "segueToCountDownVC", sender: view)
+            view.performSegue(withIdentifier: "segueToCategouriesVC", sender: view)
         }
     }
     

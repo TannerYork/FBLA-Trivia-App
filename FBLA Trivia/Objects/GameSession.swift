@@ -22,13 +22,12 @@ class GameSession {
     
     var PlayerSession: String?
     var AdminSession: String?
-    var currentView: Int = 0
     
 
     
     
     func loadData(for tableView: UITableView, in view: UIViewController, onComplete: @escaping (Bool) -> Void) {
-        print(PlayerSession)
+        print(PlayerSession ?? AdminSession!)
         FirestoreData.data.collection("game-sessions").document("\(PlayerSession ?? AdminSession!)").getDocument { (snap, error) in
             if let err = error {
                 print(err.localizedDescription)
@@ -87,7 +86,7 @@ class GameSession {
             guard let data = document.data() else {print("Error setting activity data"); return}
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let adminLobbyView = storyboard.instantiateViewController(withIdentifier: "GameAdminVC") as! GameAdminVC
+            let adminLobbyView = storyboard.instantiateViewController(withIdentifier: "AdminVC") as! AdminVC
            
             
                 if data["GameActivity"] as! Bool == true && document.exists == true {
@@ -108,10 +107,10 @@ class GameSession {
             guard let data = document.data() else {print("Error setting activity data"); return}
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let playerLobbyView = storyboard.instantiateViewController(withIdentifier: "GamePlayerVC") as! GamePlayerVC
+            let playerLobbyView = storyboard.instantiateViewController(withIdentifier: "GamePlayerVC") as! PlayerVC
             
                 if data["GameActivity"] as! Bool == true && document.exists == true {
-                    view.performSegue(withIdentifier: "playerSegueToCountDownVC", sender: view)
+                    view.performSegue(withIdentifier: "segueToCategouriesVC", sender: view)
                 } else if document.exists == false {
                     //Unwind to option view controller
                     playerLobbyView.updateChecker.remove()
@@ -128,13 +127,13 @@ class GameSession {
             guard let data = document.data() else {print("Error setting activity data"); return}
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let countDownVC = storyboard.instantiateViewController(withIdentifier: "CountDownVC") as! CountDownVC
+            let categouriesVC = storyboard.instantiateViewController(withIdentifier: "CategouriesVC") as! CategouriesVC
             
             
             if data["GameActivity"] as! Bool == true && document.exists == true {
             } else if document.exists == false {
                 //Unwind to option view cintroller
-                countDownVC.gameChecker.remove()
+                categouriesVC.gameChecker.remove()
                 view.performSegue(withIdentifier: "unwindToOptionsVC", sender: view)
             }
             

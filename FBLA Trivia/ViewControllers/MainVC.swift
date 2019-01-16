@@ -28,10 +28,7 @@ class MainVC: UIViewController, FUIAuthDelegate {
         let authUI = FUIAuth.defaultAuthUI()
         authUI!.delegate = self
         
-        let providers: [FUIAuthProvider] = [
-            FUIGoogleAuth(),
-            FUIFacebookAuth(),
-            ]
+        let providers: [FUIAuthProvider] = [FUIGoogleAuth()]
         authUI!.providers = providers
         
         let authViewController = authUI!.authViewController()
@@ -49,7 +46,7 @@ class MainVC: UIViewController, FUIAuthDelegate {
             signInButton.isHidden = true
             signOutButton.isHidden = false
             playButton.isHidden = false
-            GameSession.shared.localPlayer = Player(from: user!).userName
+            GameSession.shared.localPlayer = user!.displayName
         }
     }
     

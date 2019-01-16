@@ -12,8 +12,8 @@ class OptionsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        Alerts.shared.setupCreateGameAlert(in: self)
+        Alerts.shared.setupJoinGameAlert(in: self)
     }
     
     //MARK: Actions

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "87F8800A470E9A3B08117C68FD7DDCE6"
-               BuildableName = "Pods_FBLA_Trivia.framework"
-               BlueprintName = "Pods-FBLA Trivia"
+               BlueprintIdentifier = "97CCEF0C2F6607DEEC8F9B0A05BD1EB7"
+               BuildableName = "TTFortuneWheel.bundle"
+               BlueprintName = "TTFortuneWheel-TTFortuneWheel"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "87F8800A470E9A3B08117C68FD7DDCE6"
-            BuildableName = "Pods_FBLA_Trivia.framework"
-            BlueprintName = "Pods-FBLA Trivia"
+            BlueprintIdentifier = "97CCEF0C2F6607DEEC8F9B0A05BD1EB7"
+            BuildableName = "TTFortuneWheel.bundle"
+            BlueprintName = "TTFortuneWheel-TTFortuneWheel"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

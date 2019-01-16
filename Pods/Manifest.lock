@@ -130,6 +130,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
+  - TTFortuneWheel (0.1.6)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -137,6 +138,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - FirebaseUI/Facebook
   - FirebaseUI/Google
+  - TTFortuneWheel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -162,6 +164,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - TTFortuneWheel
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -186,7 +189,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  TTFortuneWheel: d0a8a5fd7f9e1960bac81af76f3b62848de3c32e
 
-PODFILE CHECKSUM: fc50d2e7abbcc57fde561df7091e8f29ba806005
+PODFILE CHECKSUM: 985212210b084285e49d15d00e6f61accfb37f64
 
 COCOAPODS: 1.5.3

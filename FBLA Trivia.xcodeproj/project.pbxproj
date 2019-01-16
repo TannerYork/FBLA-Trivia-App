@@ -32,6 +32,7 @@
 		E5119A5021EE7D1900D46F36 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A4F21EE7D1900D46F36 /* GameSession.swift */; };
 		E5119A5221EE7D2C00D46F36 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A5121EE7D2C00D46F36 /* Alerts.swift */; };
 		E5119A5421EE7E8F00D46F36 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A5321EE7E8F00D46F36 /* PlayerCell.swift */; };
+		E5119A5621EF905800D46F36 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A5521EF905700D46F36 /* Session.swift */; };
 		E873F4654812290D01CD1E3E /* Pods_FBLA_Trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4F7685D55D3B0CF5398285 /* Pods_FBLA_Trivia.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		E5119A4F21EE7D1900D46F36 /* GameSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		E5119A5121EE7D2C00D46F36 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		E5119A5321EE7E8F00D46F36 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		E5119A5521EF905700D46F36 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F88318BA2201D2CF0D748294 /* Pods-FBLA TriviaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA TriviaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA TriviaUITests/Pods-FBLA TriviaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				E5119A5321EE7E8F00D46F36 /* PlayerCell.swift */,
+				E5119A5521EF905700D46F36 /* Session.swift */,
 				E5119A5121EE7D2C00D46F36 /* Alerts.swift */,
 				E5119A4D21EE7D0600D46F36 /* FirestoreData.swift */,
 				E5119A4F21EE7D1900D46F36 /* GameSession.swift */,
@@ -482,6 +485,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/TTFortuneWheel/TTFortuneWheel.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -497,6 +501,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTFortuneWheel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -515,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5119A4421EE760300D46F36 /* FourVC.swift in Sources */,
+				E5119A5621EF905800D46F36 /* Session.swift in Sources */,
 				E5119A5221EE7D2C00D46F36 /* Alerts.swift in Sources */,
 				E5119A3E21EE75D100D46F36 /* OneVC.swift in Sources */,
 				E5119A4021EE75E100D46F36 /* TwoVC.swift in Sources */,
