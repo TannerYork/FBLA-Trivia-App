@@ -15,10 +15,9 @@ class GameSession {
     static let shared = GameSession()
     
     var localPlayer: String?
+    var modesNotComplete: [Int] = [1,2,3,4,5,6,7,8]
     var players: [String] = []
     var activePlayers: [String] = []
-    var knockedOutPlayers: [String] = []
-    var knockOuts: [String] = []
     
     var PlayerSession: String?
     var AdminSession: String?
@@ -43,9 +42,6 @@ class GameSession {
                 self.activePlayers.removeAll()
                 self.activePlayers.append(contentsOf: data["ActivePlayers"] as! Array)
                 
-                self.knockedOutPlayers.removeAll()
-                self.knockedOutPlayers.append(contentsOf: data["InActivePlayers"] as! Array)
-                
                 tableView.reloadData()
                 onComplete(true)
                 
@@ -66,13 +62,6 @@ class GameSession {
             self.activePlayers.removeAll()
             self.activePlayers.append(contentsOf: data["ActivePlayers"] as! Array)
             print("ActivePlayers: \(self.activePlayers)")
-            
-            self.knockedOutPlayers.removeAll()
-            self.knockedOutPlayers.append(contentsOf: data["InActivePlayers"] as! Array)
-            print("InActivePlayers: \(self.knockedOutPlayers)")
-            
-            self.knockOuts.removeAll()
-            self.knockOuts.append(contentsOf: data["Images"] as! Array)
             
             tableView.reloadData()
             

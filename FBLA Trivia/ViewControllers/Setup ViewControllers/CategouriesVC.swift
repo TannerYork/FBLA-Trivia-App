@@ -11,20 +11,74 @@ import Firebase
 import TTFortuneWheel
 
 class CategouriesVC: UIViewController {
-
+    
     //MARK: Properties
-    
-    
     var gameChecker: ListenerRegistration!
+    var segueNumber: Int? 
     
-    
+    @IBOutlet weak var spinningWheel: TTFortuneWheel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        let slices = [ CarnivalWheelSlice.init(title: "Banking Systems"),
+                       CarnivalWheelSlice.init(title: "Business Calculations"),
+                       CarnivalWheelSlice.init(title: "Business Commnication"),
+                       CarnivalWheelSlice.init(title: "Business Law"),
+                       CarnivalWheelSlice.init(title: "Business Plan"),
+                       CarnivalWheelSlice.init(title: "Computer Game & Simulation"),
+                       CarnivalWheelSlice.init(title: "Computer Propblem Solving"),
+                       CarnivalWheelSlice.init(title: "Business Ethics")]
+        spinningWheel.slices = slices
+        spinningWheel.equalSlices = true
+        spinningWheel.frameStroke.width = 0
+        spinningWheel.slices.enumerated().forEach { (pair) in
+            let slice = pair.element as! CarnivalWheelSlice
+            let offset = pair.offset
+            switch offset % 4 {
+            case 0: slice.style = .brickRed
+            case 1: slice.style = .sandYellow
+            case 2: slice.style = .babyBlue
+            case 3: slice.style = .deepBlue
+            default: slice.style = .brickRed
+            }
+        }
     }
     
-
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindToOptionsVC" {
+            GameSession.shared.modesNotComplete = [1,2,3,4,5,6,7,8]
+        }
+    }
+    
+    @IBAction func unwindToModesVC(segue: UIStoryboardSegue) {
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func rotateButton(_ sender: Any) {
+        
+        if GameSession.shared.modesNotComplete.count == 0 {
+            //Segue to scoreing view
+        } else {
+            let int = GameSession.shared.modesNotComplete.randomElement()
+            let index = GameSession.shared.modesNotComplete.firstIndex(of: int!)
+            GameSession.shared.modesNotComplete.remove(at: index!)
+            spinningWheel.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                self.spinningWheel.startAnimating(fininshIndex: int!) { (finished) in
+                    self.segueToMode(int!, from: self)
+                }
+            }
+        }
+    }
+    
+    func segueToMode(_ mode: Int, from view: UIViewController) {
+        view.performSegue(withIdentifier: "segueTo\(mode)", sender: view)
+        print(GameSession.shared.modesNotComplete)
+    }
 
 }
+
+

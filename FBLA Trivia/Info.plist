@@ -34,6 +34,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>PlayfairDisplay-Black</string>
+		<string>BEBAS___.ttf</string>
+		<string>Phosphate.ttc</string>
+		<string>Lobster_1.3.otf</string>
+		<string>Chunkfive.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

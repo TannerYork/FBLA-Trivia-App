@@ -42,11 +42,18 @@ class PlayerVC: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! CategouriesVC
-        
-        destination.gameChecker = GameSession.shared.checkIfGameIsActive(from: destination)
-        self.updateChecker.remove()
-        self.gameActivityChecker.remove()
+        if segue.identifier == "segueToCategouriesVC" {
+            let destination = segue.destination as! CategouriesVC
+            
+            destination.gameChecker = GameSession.shared.checkIfGameIsActive(from: destination)
+            self.updateChecker.remove()
+            self.gameActivityChecker.remove()
+        } else if segue.identifier == "unwindToOptionsVC" {
+            GameSession.shared.modesNotComplete = [1,2,3,4,5,6,7,8]
+            
+            self.updateChecker.remove()
+            self.gameActivityChecker.remove()
+        }
     }
 }
 
