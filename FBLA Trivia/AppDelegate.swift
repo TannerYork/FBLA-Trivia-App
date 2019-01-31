@@ -41,6 +41,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        if GameSession.shared.PlayerSession != nil {
+            FirestoreData.shared.removePlayer((Auth.auth().currentUser?.displayName)!, from: GameSession.shared.PlayerSession!) { (bool) in
+                GameSession.shared.PlayerSession = nil
+            }
+        } else if GameSession.shared.AdminSession != nil {
+            FirestoreData.shared.deleteSession(GameSession.shared.AdminSession!) { (bool) in
+                if bool == true {
+                    print("Session: \(GameSession.shared.AdminSession!) deleted")
+                } else {
+                    
+                }
+            }
+        }
     }
 
 

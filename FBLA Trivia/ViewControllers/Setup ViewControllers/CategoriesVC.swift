@@ -10,23 +10,27 @@ import UIKit
 import Firebase
 import TTFortuneWheel
 
-class CategouriesVC: UIViewController {
+class CategoriesVC: UIViewController {
     
     //MARK: Properties
     var gameChecker: ListenerRegistration!
-    var segueNumber: Int? 
+    var segueNumber: Int?
     
     @IBOutlet weak var spinningWheel: TTFortuneWheel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let slices = [ CarnivalWheelSlice.init(title: "Banking Systems"),
-                       CarnivalWheelSlice.init(title: "Business Calculations"),
-                       CarnivalWheelSlice.init(title: "Business Commnication"),
-                       CarnivalWheelSlice.init(title: "Business Law"),
-                       CarnivalWheelSlice.init(title: "Business Plan"),
-                       CarnivalWheelSlice.init(title: "Computer Game & Simulation"),
-                       CarnivalWheelSlice.init(title: "Computer Propblem Solving"),
-                       CarnivalWheelSlice.init(title: "Business Ethics")]
+        let slices = [ CarnivalWheelSlice.init(title: "Competitive Events"),
+                       CarnivalWheelSlice.init(title: "Business Managment"),
+                       CarnivalWheelSlice.init(title: "National Officers"),
+                       CarnivalWheelSlice.init(title: "Parliamentary Procedure"),
+                       CarnivalWheelSlice.init(title: "FBLA History"),
+                       CarnivalWheelSlice.init(title: "FBLA History"),
+                       CarnivalWheelSlice.init(title: "FBLA History"),
+                       CarnivalWheelSlice.init(title: "FBLA History")]
+       
+        
         spinningWheel.slices = slices
         spinningWheel.equalSlices = true
         spinningWheel.frameStroke.width = 0

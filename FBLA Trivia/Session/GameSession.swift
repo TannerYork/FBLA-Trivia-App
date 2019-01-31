@@ -17,7 +17,7 @@ class GameSession {
     var localPlayer: String?
     var modesNotComplete: [Int] = [1,2,3,4,5,6,7,8]
     var players: [String] = []
-    var activePlayers: [String] = []
+    var playerScores: [Int] = [] //Int index responds to when player joined.
     
     var PlayerSession: String?
     var AdminSession: String?
@@ -38,9 +38,6 @@ class GameSession {
                 print(data)
                 self.players.removeAll()
                 self.players.append(contentsOf: data["Players"] as! Array)
-                
-                self.activePlayers.removeAll()
-                self.activePlayers.append(contentsOf: data["ActivePlayers"] as! Array)
                 
                 tableView.reloadData()
                 onComplete(true)
@@ -99,7 +96,7 @@ class GameSession {
             let playerLobbyView = storyboard.instantiateViewController(withIdentifier: "GamePlayerVC") as! PlayerVC
             
                 if data["GameActivity"] as! Bool == true && document.exists == true {
-                    view.performSegue(withIdentifier: "segueToCategouriesVC", sender: view)
+                    view.performSegue(withIdentifier: "segueToCategoriesVC", sender: view)
                 } else if document.exists == false {
                     //Unwind to option view controller
                     playerLobbyView.updateChecker.remove()
@@ -116,13 +113,13 @@ class GameSession {
             guard let data = document.data() else {print("Error setting activity data"); return}
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let categouriesVC = storyboard.instantiateViewController(withIdentifier: "CategouriesVC") as! CategouriesVC
+            let categoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesVC") as! CategoriesVC
             
             
             if data["GameActivity"] as! Bool == true && document.exists == true {
             } else if document.exists == false {
                 //Unwind to option view cintroller
-                categouriesVC.gameChecker.remove()
+                categoriesVC.gameChecker.remove()
                 view.performSegue(withIdentifier: "unwindToOptionsVC", sender: view)
             }
             

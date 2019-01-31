@@ -20,9 +20,8 @@ class FirestoreData {
         FirestoreData.data.collection("game-sessions").document("\(id)").setData([
             "id": "\(id)",
             "Players": ["\(Auth.auth().currentUser!.displayName!)" ],
-            "ActivePlayers": ["\(Auth.auth().currentUser!.displayName!)" ],
-            "InActivePlayers": [],
-            "Images": [],
+            "PlayerOne": 0,
+            "PlayerTwo": 0,
             "GameActivity": false
         ]) { err in
             if let err = err {
@@ -52,7 +51,7 @@ class FirestoreData {
                 })
                 return
             }
-            view.performSegue(withIdentifier: "segueToCategouriesVC", sender: view)
+            view.performSegue(withIdentifier: "segueToCountDownVC", sender: view)
         }
     }
     

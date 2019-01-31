@@ -42,8 +42,8 @@ class PlayerVC: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToCategouriesVC" {
-            let destination = segue.destination as! CategouriesVC
+        if segue.identifier == "segueToCategoriesVC" {
+            let destination = segue.destination as! CategoriesVC
             
             destination.gameChecker = GameSession.shared.checkIfGameIsActive(from: destination)
             self.updateChecker.remove()

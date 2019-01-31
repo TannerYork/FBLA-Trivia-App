@@ -23,10 +23,10 @@ public class CarnivalWheelSlice: FortuneWheelSliceProtocol {
     
     public var backgroundColor: UIColor? {
         switch style {
-        case .brickRed: return TTUtils.uiColor(from:0xE27230)
-        case .sandYellow: return TTUtils.uiColor(from:0xF7D565)
-        case .babyBlue: return TTUtils.uiColor(from:0x93D0C4)
-        case .deepBlue: return TTUtils.uiColor(from:0x2A7F7F)
+        case .brickRed: return UIColor(red:0.18, green:0.34, blue:0.38, alpha:1.0)
+        case .sandYellow: return UIColor(red:0.94, green:0.74, blue:0.12, alpha:1.0)
+        case .babyBlue: return UIColor(red:0.85, green:0.56, blue:0.22, alpha:1.0)
+        case .deepBlue: return UIColor(red:0.24, green:0.56, blue:0.65, alpha:1.0)
         }
     }
     
