@@ -47,11 +47,17 @@ class MainVC: UIViewController, FUIAuthDelegate {
             signOutButton.isHidden = false
             playButton.isHidden = false
             GameSession.shared.localPlayer = user!.displayName
+            GameSession.shared.localPlayerId = user!.uid
         }
     }
     
     @IBAction func signOut(_ sender: Any) {
         try! Auth.auth().signOut()
+        GameSession.shared.localPlayer = nil
+        GameSession.shared.localPlayerId = nil
+        signInButton.isHidden = false
+        signOutButton.isHidden = true
+        playButton.isHidden = true
     }
     
 }

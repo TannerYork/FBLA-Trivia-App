@@ -15,15 +15,22 @@ class GameSession {
     static let shared = GameSession()
     
     var localPlayer: String?
+    var localPlayerId: String?
     var modesNotComplete: [Int] = [1,2,3,4,5,6,7,8]
     var players: [String] = []
-    var playerScores: [Int] = [] //Int index responds to when player joined.
-    
+    var playerScores: [[String: Any]] = [] //Int index responds to when player joined.
     var PlayerSession: String?
     var AdminSession: String?
+    var updateChecker: ListenerRegistration!
+    var gameActivityChecker: ListenerRegistration!
+    var shouldSegueToCategories = false
     
+    
+     func removeListeners() {
+        gameActivityChecker.remove()
+        updateChecker.remove()
+    }
 
-    
     
     func loadData(for tableView: UITableView, in view: UIViewController, onComplete: @escaping (Bool) -> Void) {
         print(PlayerSession ?? AdminSession!)
@@ -56,9 +63,6 @@ class GameSession {
             self.players.append(contentsOf: data["Players"] as! Array)
             print("Players: \(self.players)")
             
-            self.activePlayers.removeAll()
-            self.activePlayers.append(contentsOf: data["ActivePlayers"] as! Array)
-            print("ActivePlayers: \(self.activePlayers)")
             
             tableView.reloadData()
             
@@ -66,64 +70,58 @@ class GameSession {
         return listener
     }
     
-    func checkIfGameIsActiveAdmin(from view: UIViewController) -> ListenerRegistration {
-        let listener = FirestoreData.data.collection("game-sessions").document("\(AdminSession!)").addSnapshotListener { (documentSnapshot, error) in
-            guard let document = documentSnapshot else {print("Error setting activity document"); return}
-            guard let data = document.data() else {print("Error setting activity data"); return}
+    
 
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let adminLobbyView = storyboard.instantiateViewController(withIdentifier: "AdminVC") as! AdminVC
-           
-            
-                if data["GameActivity"] as! Bool == true && document.exists == true {
-                } else if document.exists == false {
-                    //Unwind to option view cintroller
-                    adminLobbyView.updateChecker.remove()
-                    adminLobbyView.gameActivityChecker.remove()
-                    view.performSegue(withIdentifier: "unwindToOptionsVC", sender: view)
-                }
-            
-        }
-        return listener
-    }
-    
-    func checkIfGameIsActivePlayer(from view: UIViewController) -> ListenerRegistration {
-        let listener = FirestoreData.data.collection("game-sessions").document("\(PlayerSession!)").addSnapshotListener { (documentSnapshot, error) in
-            guard let document = documentSnapshot else {print("Error setting activity document"); return}
-            guard let data = document.data() else {print("Error setting activity data"); return}
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let playerLobbyView = storyboard.instantiateViewController(withIdentifier: "GamePlayerVC") as! PlayerVC
-            
-                if data["GameActivity"] as! Bool == true && document.exists == true {
-                    view.performSegue(withIdentifier: "segueToCategoriesVC", sender: view)
-                } else if document.exists == false {
-                    //Unwind to option view controller
-                    playerLobbyView.updateChecker.remove()
-                    playerLobbyView.gameActivityChecker.remove()
-                    view.performSegue(withIdentifier: "unwindToOptionsVC", sender: view)
-                }
-        }
-        return listener
-    }
-    
-    func checkIfGameIsActive(from view: UIViewController) -> ListenerRegistration {
+    func checkIfGameIsActive() -> ListenerRegistration {
         let listener = FirestoreData.data.collection("game-sessions").document("\(PlayerSession ?? AdminSession!)").addSnapshotListener { (documentSnapshot, error) in
             guard let document = documentSnapshot else {print("Error setting activity document"); return}
             guard let data = document.data() else {print("Error setting activity data"); return}
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let categoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesVC") as! CategoriesVC
+            //Updates PlayerScores
+            self.playerScores.removeAll()
+            for player in GameSession.shared.players {
+                if let playerData = data[player] as? [String: Any] {
+                    print("PlayerData set")
+                    self.playerScores.append([playerData["DisplayName"] as! String: playerData["Score"] as Any])
+                }
+            }
+            print("Scores: \(self.playerScores)")
             
+            //Check if player is still in game
+            self.players.removeAll()
+            self.players.append(contentsOf: data["Players"] as! Array)
+            print("Players: \(self.players)")
             
-            if data["GameActivity"] as! Bool == true && document.exists == true {
-            } else if document.exists == false {
+            var isPlayerInSession = false
+            for player in self.players {
+                if player == self.localPlayer {
+                    isPlayerInSession = true
+                }
+            }
+            
+            //Do nothing if game exist and player is in it. Remove listener and unwind to optionsVC, if either are false.
+            
+            if data["GameActivity"] as! Bool == true && document.exists == true && isPlayerInSession == true {
+                if self.shouldSegueToCategories == true {
+                    let view = UIApplication.shared.topMostViewController()
+                    view?.performSegue(withIdentifier: "segueToCategoriesVC", sender: view)
+                }
+            } else if document.exists == false || isPlayerInSession == false {
                 //Unwind to option view cintroller
-                categoriesVC.gameChecker.remove()
-                view.performSegue(withIdentifier: "unwindToOptionsVC", sender: view)
+                self.gameActivityChecker.remove()
+                self.updateChecker.remove()
+                let view = UIApplication.shared.topMostViewController()
+                view!.performSegue(withIdentifier: "unwindToOptionsVC", sender: view )
             }
             
         }
         return listener
+    }
+    
+    
+    func updateScore(for player: String, in session: String, to int: Int, onComplete: @escaping (Bool) -> Void) {
+        let session = FirestoreData.data.collection("game-sessions").document("\(session)")
+        session.updateData([player: ["DisplayName": player, "Score": int]])
+        
     }
 }

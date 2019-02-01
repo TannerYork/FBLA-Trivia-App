@@ -13,6 +13,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var orientationLock = UIInterfaceOrientationMask.portrait
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -29,6 +30,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        let player = Auth.auth().currentUser?.displayName!
+        print("\(player ?? "Error") entered background")
+        
+        if GameSession.shared.PlayerSession != nil {
+            FirestoreData.shared.removePlayer(Auth.auth().currentUser!.displayName!, from: GameSession.shared.PlayerSession!) { (bool) in
+                if bool == false {
+                    print("Error deleting session after going to background.")
+                } else {
+                    GameSession.shared.PlayerSession = nil
+                }
+            }
+        } else if GameSession.shared.AdminSession != nil {
+            FirestoreData.shared.deleteSession(GameSession.shared.AdminSession!) { (bool) in
+                if bool == true {
+                    print("Session deleted")
+                } else {
+                    print("Error, session not deleted.")
+                }
+            }
+        }
+        
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -41,6 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        print("About to terminate app")
+        
         if GameSession.shared.PlayerSession != nil {
             FirestoreData.shared.removePlayer((Auth.auth().currentUser?.displayName)!, from: GameSession.shared.PlayerSession!) { (bool) in
                 GameSession.shared.PlayerSession = nil
@@ -54,6 +80,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return self.orientationLock
     }
 
 

@@ -32,7 +32,6 @@
 		E5119A5021EE7D1900D46F36 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A4F21EE7D1900D46F36 /* GameSession.swift */; };
 		E5119A5221EE7D2C00D46F36 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A5121EE7D2C00D46F36 /* Alerts.swift */; };
 		E5119A5421EE7E8F00D46F36 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A5321EE7E8F00D46F36 /* PlayerCell.swift */; };
-		E5119A5621EF905800D46F36 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A5521EF905700D46F36 /* Session.swift */; };
 		E5119A6221F0C0F600D46F36 /* CarnivalWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A6121F0C0F600D46F36 /* CarnivalWheelSlice.swift */; };
 		E5119A6721F0C22A00D46F36 /* BEBAS___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5119A6321F0C22500D46F36 /* BEBAS___.ttf */; };
 		E5119A6821F0C22A00D46F36 /* Chunkfive.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5119A6421F0C22700D46F36 /* Chunkfive.otf */; };
@@ -42,6 +41,9 @@
 		E5119A6E21F0D30000D46F36 /* EightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A6D21F0D30000D46F36 /* EightVC.swift */; };
 		E529399E2202601300578886 /* CategoriesPickerViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529399D2202601300578886 /* CategoriesPickerViewVC.swift */; };
 		E52939A022029F9A00578886 /* delicious.otf in Resources */ = {isa = PBXBuildFile; fileRef = E529399F22029F9A00578886 /* delicious.otf */; };
+		E52939A22203441300578886 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52939A12203441300578886 /* Question.swift */; };
+		E52939A42203462300578886 /* QuestionsLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52939A32203462300578886 /* QuestionsLists.swift */; };
+		E52939A6220398E700578886 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52939A5220398E700578886 /* Extensions.swift */; };
 		E873F4654812290D01CD1E3E /* Pods_FBLA_Trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4F7685D55D3B0CF5398285 /* Pods_FBLA_Trivia.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +102,6 @@
 		E5119A4F21EE7D1900D46F36 /* GameSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		E5119A5121EE7D2C00D46F36 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		E5119A5321EE7E8F00D46F36 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
-		E5119A5521EF905700D46F36 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		E5119A6121F0C0F600D46F36 /* CarnivalWheelSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarnivalWheelSlice.swift; sourceTree = "<group>"; };
 		E5119A6321F0C22500D46F36 /* BEBAS___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BEBAS___.ttf"; sourceTree = "<group>"; };
 		E5119A6421F0C22700D46F36 /* Chunkfive.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chunkfive.otf; sourceTree = "<group>"; };
@@ -110,6 +111,9 @@
 		E5119A6D21F0D30000D46F36 /* EightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightVC.swift; sourceTree = "<group>"; };
 		E529399D2202601300578886 /* CategoriesPickerViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPickerViewVC.swift; sourceTree = "<group>"; };
 		E529399F22029F9A00578886 /* delicious.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = delicious.otf; sourceTree = "<group>"; };
+		E52939A12203441300578886 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		E52939A32203462300578886 /* QuestionsLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsLists.swift; sourceTree = "<group>"; };
+		E52939A5220398E700578886 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F88318BA2201D2CF0D748294 /* Pods-FBLA TriviaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA TriviaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA TriviaUITests/Pods-FBLA TriviaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +282,9 @@
 				E5119A5321EE7E8F00D46F36 /* PlayerCell.swift */,
 				E5119A5121EE7D2C00D46F36 /* Alerts.swift */,
 				E5119A4D21EE7D0600D46F36 /* FirestoreData.swift */,
+				E52939A12203441300578886 /* Question.swift */,
+				E52939A32203462300578886 /* QuestionsLists.swift */,
+				E52939A5220398E700578886 /* Extensions.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -286,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				E5119A4F21EE7D1900D46F36 /* GameSession.swift */,
-				E5119A5521EF905700D46F36 /* Session.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -559,15 +565,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52939A6220398E700578886 /* Extensions.swift in Sources */,
 				E5119A4421EE760300D46F36 /* FourVC.swift in Sources */,
-				E5119A5621EF905800D46F36 /* Session.swift in Sources */,
 				E5119A6221F0C0F600D46F36 /* CarnivalWheelSlice.swift in Sources */,
 				E529399E2202601300578886 /* CategoriesPickerViewVC.swift in Sources */,
+				E52939A42203462300578886 /* QuestionsLists.swift in Sources */,
 				E5119A5221EE7D2C00D46F36 /* Alerts.swift in Sources */,
 				E5119A3E21EE75D100D46F36 /* OneVC.swift in Sources */,
 				E5119A4021EE75E100D46F36 /* TwoVC.swift in Sources */,
 				E5119A4E21EE7D0600D46F36 /* FirestoreData.swift in Sources */,
 				E5119A5021EE7D1900D46F36 /* GameSession.swift in Sources */,
+				E52939A22203441300578886 /* Question.swift in Sources */,
 				E5119A6C21F0D2EA00D46F36 /* SevenVC.swift in Sources */,
 				E5119A4821EE762900D46F36 /* SixVC.swift in Sources */,
 				E5119A4221EE75F100D46F36 /* ThreeVC.swift in Sources */,

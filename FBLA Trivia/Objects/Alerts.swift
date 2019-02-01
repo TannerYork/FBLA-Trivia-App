@@ -18,6 +18,7 @@ class Alerts {
      let createGameAlert = UIAlertController(title: "Create Game", message: "Once you hit enter a special session id will be shown, give this to your firends so they can join the game.", preferredStyle: .alert)
     
      let joinGameAlert = UIAlertController(title: "Join Game", message: "Enter the id of the game session.", preferredStyle: .alert)
+    
      let loginErrorAlert = UIAlertController(title: "Error Loging In", message: "Something went wrong with the login in proccess please check all fields are correct.", preferredStyle: .alert)
     
      let exitAppError = UIAlertController(title: "Fatal Error", message: "You must be signed in for the app to work. Closing app to prevent futher errors.", preferredStyle: .alert)
@@ -55,9 +56,10 @@ class Alerts {
             guard let session = textfield.text, !textfield.text!.isEmpty else {
                 return
             }
-            FirestoreData.shared.addPlayer((Auth.auth().currentUser)!, to: "\(session)", onComplete: { (completion) in
+            FirestoreData.shared.addPlayer(Auth.auth().currentUser!, to: "\(session)", onComplete: { (completion) in
                 if completion == true {
                     GameSession.shared.PlayerSession = session
+                    print("\(GameSession.shared.players)")
                     view.performSegue(withIdentifier: "segueToPlayerVC", sender: view)
                 } else {
                     self.joinGameAlert.message = "Sorry something went wrong. Make sure the session id you entered is correct."

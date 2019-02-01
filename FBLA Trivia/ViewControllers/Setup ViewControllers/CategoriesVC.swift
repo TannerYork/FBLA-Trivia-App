@@ -25,9 +25,9 @@ class CategoriesVC: UIViewController {
                        CarnivalWheelSlice.init(title: "Business Managment"),
                        CarnivalWheelSlice.init(title: "National Officers"),
                        CarnivalWheelSlice.init(title: "Parliamentary Procedure"),
-                       CarnivalWheelSlice.init(title: "FBLA History"),
-                       CarnivalWheelSlice.init(title: "FBLA History"),
-                       CarnivalWheelSlice.init(title: "FBLA History"),
+                       CarnivalWheelSlice.init(title: "Business Ethics"),
+                       CarnivalWheelSlice.init(title: "Buisness Priciples"),
+                       CarnivalWheelSlice.init(title: "Business Organization"),
                        CarnivalWheelSlice.init(title: "FBLA History")]
        
         

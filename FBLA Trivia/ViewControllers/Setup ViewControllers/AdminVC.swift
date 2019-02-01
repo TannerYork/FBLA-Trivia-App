@@ -16,15 +16,12 @@ class AdminVC: UIViewController {
     @IBOutlet weak var sessionIdLabel: UILabel!
     
     
-    var updateChecker: ListenerRegistration!
-    var gameActivityChecker: ListenerRegistration!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         GameSession.shared.loadData(for: playersTV, in: self) { (bool) in
-            self.updateChecker = GameSession.shared.checkForUpdates(for: self.playersTV)
-            self.gameActivityChecker = GameSession.shared.checkIfGameIsActiveAdmin(from: self)
+            GameSession.shared.shouldSegueToCategories = true
+            GameSession.shared.updateChecker = GameSession.shared.checkForUpdates(for: self.playersTV)
+            GameSession.shared.gameActivityChecker = GameSession.shared.checkIfGameIsActive()
             self.sessionIdLabel.text = GameSession.shared.AdminSession
         }
     }
@@ -47,20 +44,9 @@ class AdminVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToCategoriesVC" {
-            let destination = segue.destination as! CategoriesVC
-            
-            destination.gameChecker = GameSession.shared.checkIfGameIsActive(from: destination)
-            self.updateChecker.remove()
-            self.gameActivityChecker.remove()
-        } else if segue.identifier == "unwindToOptionsVC" {
-            GameSession.shared.modesNotComplete = [1,2,3,4,5,6,7,8]
-            
-            self.updateChecker.remove()
-            self.gameActivityChecker.remove()
-        }
-        
+        GameSession.shared.shouldSegueToCategories = false
     }
+    
 }
 
 extension AdminVC: UITableViewDelegate, UITableViewDataSource {
@@ -80,7 +66,7 @@ extension AdminVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let removePlayer = UITableViewRowAction(style: .destructive, title: "Remove") { action, indexPath in
             let player = GameSession.shared.players[indexPath.row]
-            if player == Auth.auth().currentUser?.displayName {
+            if player == GameSession.shared.localPlayer {
                 FirestoreData.shared.deleteSession(GameSession.shared.AdminSession!, onComplete: { (bool) in
                     if bool == true {
                     } else {
@@ -90,7 +76,6 @@ extension AdminVC: UITableViewDelegate, UITableViewDataSource {
             } else {
                 FirestoreData.shared.removePlayer(player, from: GameSession.shared.AdminSession!, onComplete: { (completion) in
                     if completion == true{
-                        print(GameSession.shared.activePlayers)
                         print("\(player) was removed")
                         tableView.reloadData()
                     } else {

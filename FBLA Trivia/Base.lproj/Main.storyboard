@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yKe-mZ-XTl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="84d-ZI-GRr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -124,7 +124,7 @@
                     <connections>
                         <outlet property="playersTV" destination="mRK-Ax-dcd" id="v0J-Yb-Nin"/>
                         <outlet property="sessionIdLabel" destination="39p-Xe-KTm" id="a3q-wD-KpL"/>
-                        <segue destination="VyS-Pi-nJ4" kind="unwind" unwindAction="unwindToOptionsVCWithSegue:" id="aLq-yU-8t1"/>
+                        <segue destination="VyS-Pi-nJ4" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="aLq-yU-8t1"/>
                         <segue destination="yKe-mZ-XTl" kind="show" identifier="segueToCategoriesVC" id="t1T-ME-QcP"/>
                     </connections>
                 </viewController>
@@ -248,7 +248,7 @@
                                     <constraint firstAttribute="width" constant="254" id="91C-le-hlN"/>
                                     <constraint firstAttribute="height" constant="76" id="b0U-OE-H9h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="37"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="33"/>
                                 <state key="normal" title="Create Game">
                                     <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -324,7 +324,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W2S-tS-ll4">
                                 <rect key="frame" x="0.0" y="97" width="375" height="425"/>
-                                <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="55" id="S07-1D-2Yh" customClass="PlayerCell" customModule="FBLA_Trivia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
@@ -395,7 +395,7 @@
                     </view>
                     <connections>
                         <outlet property="playersTV" destination="W2S-tS-ll4" id="SD6-bI-o32"/>
-                        <segue destination="fQB-8M-r9t" kind="unwind" unwindAction="unwindToOptionsVCWithSegue:" id="Utq-8e-qsB"/>
+                        <segue destination="fQB-8M-r9t" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="Utq-8e-qsB"/>
                         <segue destination="yKe-mZ-XTl" kind="show" identifier="segueToCategoriesVC" id="RIh-de-zJf"/>
                     </connections>
                 </viewController>
@@ -413,51 +413,119 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FBLA History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-5C-RZU">
-                                <rect key="frame" x="0.0" y="34" width="375" height="69"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="2zr-z3-Mms"/>
                                     <constraint firstAttribute="height" constant="69" id="f2S-LP-LzT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="50"/>
-                                <color key="textColor" white="0.2040703204" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNE-KJ-1Pn">
-                                <rect key="frame" x="0.0" y="530" width="375" height="117"/>
-                                <color key="backgroundColor" red="0.85098039219999999" green="0.56078431370000004" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="V5G-Di-usp"/>
-                                    <constraint firstAttribute="height" constant="117" id="Z5D-2h-FSs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="80"/>
-                                <state key="normal" title="Done">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7t2-uE-iZG">
+                                <rect key="frame" x="16" y="97" width="343" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87059414386749268" green="0.87057775259017944" blue="0.87058883905410767" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco la</string>
+                                <color key="textColor" red="0.26666867729999999" green="0.26666298510000003" blue="0.26666685940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikl-QJ-RKv">
+                                <rect key="frame" x="16" y="536" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Four">
                                     <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="returnToModeView:" destination="vAu-vp-csM" eventType="touchUpInside" id="euf-vu-cfi"/>
-                                    <action selector="startGame:" destination="ib7-2o-WpB" eventType="touchUpInside" id="PJz-LJ-zuc"/>
+                                    <action selector="didGuessFour:" destination="vAu-vp-csM" eventType="touchUpInside" id="NMP-L1-zBY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aip-JH-cEE">
+                                <rect key="frame" x="16" y="449" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Three">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didGuessThree:" destination="vAu-vp-csM" eventType="touchUpInside" id="wZH-pv-NIk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpO-Pq-iew">
+                                <rect key="frame" x="16" y="362" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.83529411760000005" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Two">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didGuessTwo:" destination="vAu-vp-csM" eventType="touchUpInside" id="caU-yk-99o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMX-zA-9k0">
+                                <rect key="frame" x="16" y="275" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="One">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didGuessOne:" destination="vAu-vp-csM" eventType="touchUpInside" id="Y5O-kt-YEU"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.94098359346389771" green="0.93353766202926636" blue="0.92156732082366943" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.93333333333333335" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Sjb-JJ-48y" firstAttribute="bottom" secondItem="yNE-KJ-1Pn" secondAttribute="bottom" constant="20" id="G8R-1M-srQ"/>
-                            <constraint firstItem="5gg-5C-RZU" firstAttribute="top" secondItem="Sjb-JJ-48y" secondAttribute="top" constant="14" id="SIs-dD-aeE"/>
-                            <constraint firstItem="yNE-KJ-1Pn" firstAttribute="leading" secondItem="Sjb-JJ-48y" secondAttribute="leading" id="Syb-FF-tJk"/>
-                            <constraint firstItem="yNE-KJ-1Pn" firstAttribute="trailing" secondItem="Sjb-JJ-48y" secondAttribute="trailing" id="kp7-1O-WFJ"/>
+                            <constraint firstItem="5gg-5C-RZU" firstAttribute="top" secondItem="Sjb-JJ-48y" secondAttribute="top" id="SIs-dD-aeE"/>
                             <constraint firstItem="5gg-5C-RZU" firstAttribute="trailing" secondItem="Sjb-JJ-48y" secondAttribute="trailing" id="utQ-SO-klx"/>
                             <constraint firstItem="5gg-5C-RZU" firstAttribute="leading" secondItem="Sjb-JJ-48y" secondAttribute="leading" id="zkP-AW-ON3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sjb-JJ-48y"/>
                     </view>
                     <connections>
-                        <segue destination="4Wf-qj-QGR" kind="unwind" identifier="unwindToModesVC" unwindAction="unwindToModesVCWithSegue:" id="PYb-Zi-4JN"/>
+                        <outlet property="aFour" destination="Ikl-QJ-RKv" id="FTL-vU-cz5"/>
+                        <outlet property="aOne" destination="uMX-zA-9k0" id="Fpk-ap-8Pu"/>
+                        <outlet property="aThree" destination="Aip-JH-cEE" id="1vo-VS-7kM"/>
+                        <outlet property="aTwo" destination="PpO-Pq-iew" id="X8V-7G-Jwe"/>
+                        <outlet property="textView" destination="7t2-uE-iZG" id="N5H-dC-f17"/>
+                        <segue destination="4Wf-qj-QGR" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToModesVCWithSegue:" id="PYb-Zi-4JN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOX-vr-uNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="4Wf-qj-QGR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3698" y="-210"/>
+            <point key="canvasLocation" x="3696.8000000000002" y="-210.04497751124438"/>
         </scene>
         <!--CategoriesVC-->
         <scene sceneID="KUz-HD-IOY">
@@ -526,31 +594,82 @@
                                 <color key="textColor" white="0.2040703204" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JE-If-M5k">
-                                <rect key="frame" x="0.0" y="530" width="375" height="117"/>
-                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="Ihh-5m-N9i"/>
-                                    <constraint firstAttribute="height" constant="117" id="OzX-SQ-DgP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="80"/>
-                                <state key="normal" title="Done">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vh7-hQ-qDe">
+                                <rect key="frame" x="16" y="97" width="343" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87059414390000001" green="0.87057775260000003" blue="0.87058883909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco la</string>
+                                <color key="textColor" red="0.26666867729999999" green="0.26666298510000003" blue="0.26666685940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bx-N8-4CJ">
+                                <rect key="frame" x="16" y="536" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Four">
                                     <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <action selector="startGame:" destination="ib7-2o-WpB" eventType="touchUpInside" id="o2V-ix-UNp"/>
-                                    <action selector="unwindToModeVC:" destination="1v0-uP-dGe" eventType="touchUpInside" id="Ar9-7r-ltR"/>
-                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5s-hy-Cle">
+                                <rect key="frame" x="16" y="449" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Three">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ6-rJ-Mb1">
+                                <rect key="frame" x="16" y="362" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.83529411760000005" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Two">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQe-K1-edK">
+                                <rect key="frame" x="16" y="275" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="One">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="zaN-dD-bp6" firstAttribute="leading" secondItem="qMI-Tk-xeA" secondAttribute="leading" id="QdQ-MW-mms"/>
                             <constraint firstItem="zaN-dD-bp6" firstAttribute="top" secondItem="qMI-Tk-xeA" secondAttribute="top" id="SYw-pm-oRS"/>
-                            <constraint firstItem="4JE-If-M5k" firstAttribute="leading" secondItem="qMI-Tk-xeA" secondAttribute="leading" id="bzM-6a-2uz"/>
-                            <constraint firstItem="qMI-Tk-xeA" firstAttribute="bottom" secondItem="4JE-If-M5k" secondAttribute="bottom" constant="20" id="cwv-Zg-0hS"/>
                             <constraint firstItem="zaN-dD-bp6" firstAttribute="trailing" secondItem="qMI-Tk-xeA" secondAttribute="trailing" id="eJC-Ke-OK6"/>
-                            <constraint firstItem="4JE-If-M5k" firstAttribute="trailing" secondItem="qMI-Tk-xeA" secondAttribute="trailing" id="jc9-4n-15P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qMI-Tk-xeA"/>
                     </view>
@@ -581,30 +700,81 @@
                                 <color key="textColor" white="0.2040703204" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5v-hD-S5r">
-                                <rect key="frame" x="0.0" y="530" width="375" height="117"/>
-                                <color key="backgroundColor" red="0.85098039219999999" green="0.56078431370000004" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="117" id="F86-3m-Ayg"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="JmU-Zp-6Cz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="80"/>
-                                <state key="normal" title="Done">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v1q-Qk-UoR">
+                                <rect key="frame" x="16" y="97" width="343" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87059414390000001" green="0.87057775260000003" blue="0.87058883909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco la</string>
+                                <color key="textColor" red="0.26666867729999999" green="0.26666298510000003" blue="0.26666685940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qau-Rh-IYd">
+                                <rect key="frame" x="16" y="536" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Four">
                                     <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <action selector="startGame:" destination="ib7-2o-WpB" eventType="touchUpInside" id="BFS-SH-Xzd"/>
-                                    <action selector="unwindToModeVC:" destination="aRR-1z-qaQ" eventType="touchUpInside" id="Skh-s5-bkC"/>
-                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbU-3f-hTP">
+                                <rect key="frame" x="16" y="449" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Three">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce0-jj-L0O">
+                                <rect key="frame" x="16" y="362" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.83529411760000005" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Two">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKV-7a-Iyo">
+                                <rect key="frame" x="16" y="275" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="One">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="W98-3s-J9R" firstAttribute="trailing" secondItem="yAL-au-Zm0" secondAttribute="trailing" id="3PT-0W-iPl"/>
-                            <constraint firstItem="C5v-hD-S5r" firstAttribute="trailing" secondItem="yAL-au-Zm0" secondAttribute="trailing" id="9H0-VF-lJ9"/>
-                            <constraint firstItem="yAL-au-Zm0" firstAttribute="bottom" secondItem="C5v-hD-S5r" secondAttribute="bottom" constant="20" id="K2U-Wd-C8x"/>
                             <constraint firstItem="W98-3s-J9R" firstAttribute="top" secondItem="yAL-au-Zm0" secondAttribute="top" id="Kxs-6v-TgN"/>
-                            <constraint firstItem="C5v-hD-S5r" firstAttribute="leading" secondItem="yAL-au-Zm0" secondAttribute="leading" id="f1N-Fb-IcW"/>
                             <constraint firstItem="W98-3s-J9R" firstAttribute="leading" secondItem="yAL-au-Zm0" secondAttribute="leading" id="hdZ-fH-0To"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yAL-au-Zm0"/>
@@ -636,30 +806,81 @@
                                 <color key="textColor" white="0.2040703204" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1V-dG-fGA">
-                                <rect key="frame" x="0.0" y="530" width="375" height="117"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="117" id="5wp-HD-syL"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="TAK-zp-4ZU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="80"/>
-                                <state key="normal" title="Done">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t6T-mC-oP7">
+                                <rect key="frame" x="16" y="97" width="343" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87059414390000001" green="0.87057775260000003" blue="0.87058883909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco la</string>
+                                <color key="textColor" red="0.26666867729999999" green="0.26666298510000003" blue="0.26666685940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY4-DS-1Hh">
+                                <rect key="frame" x="16" y="536" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Four">
                                     <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <action selector="startGame:" destination="ib7-2o-WpB" eventType="touchUpInside" id="27d-37-HUl"/>
-                                    <action selector="unwindToModeVC:" destination="Rf6-F7-oqA" eventType="touchUpInside" id="AO1-Fu-Ce7"/>
-                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTg-OK-0OS">
+                                <rect key="frame" x="16" y="449" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Three">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fK-4p-diH">
+                                <rect key="frame" x="16" y="362" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.83529411760000005" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Two">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojA-Wv-qIq">
+                                <rect key="frame" x="16" y="275" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="One">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Y1V-dG-fGA" firstAttribute="leading" secondItem="5B2-Bv-sng" secondAttribute="leading" id="1n7-mc-kMc"/>
                             <constraint firstItem="wUC-Rn-Whb" firstAttribute="top" secondItem="5B2-Bv-sng" secondAttribute="top" id="AUF-p0-kog"/>
                             <constraint firstItem="wUC-Rn-Whb" firstAttribute="trailing" secondItem="5B2-Bv-sng" secondAttribute="trailing" id="Yot-78-Moh"/>
-                            <constraint firstItem="Y1V-dG-fGA" firstAttribute="trailing" secondItem="5B2-Bv-sng" secondAttribute="trailing" id="aPV-rI-aUl"/>
-                            <constraint firstItem="5B2-Bv-sng" firstAttribute="bottom" secondItem="Y1V-dG-fGA" secondAttribute="bottom" constant="20" id="cxQ-EX-gCU"/>
                             <constraint firstItem="wUC-Rn-Whb" firstAttribute="leading" secondItem="5B2-Bv-sng" secondAttribute="leading" id="lgO-dx-PXX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5B2-Bv-sng"/>
@@ -691,29 +912,80 @@
                                 <color key="textColor" white="0.2040703204" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcF-TL-KUL">
-                                <rect key="frame" x="0.0" y="530" width="375" height="117"/>
-                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="PtM-kl-4jf"/>
-                                    <constraint firstAttribute="height" constant="117" id="apV-of-AWN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="80"/>
-                                <state key="normal" title="Done">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nGI-X9-4i9">
+                                <rect key="frame" x="16" y="97" width="343" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87059414390000001" green="0.87057775260000003" blue="0.87058883909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco la</string>
+                                <color key="textColor" red="0.26666867729999999" green="0.26666298510000003" blue="0.26666685940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx3-BN-2zP">
+                                <rect key="frame" x="16" y="536" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Four">
                                     <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <action selector="startGame:" destination="ib7-2o-WpB" eventType="touchUpInside" id="zSL-34-V5v"/>
-                                    <action selector="unwindToModeVC:" destination="OOz-Cb-NX1" eventType="touchUpInside" id="m4I-9S-0xA"/>
-                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fB-vp-0TJ">
+                                <rect key="frame" x="16" y="449" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Three">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRD-ow-FlU">
+                                <rect key="frame" x="16" y="362" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.83529411760000005" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Two">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXv-JZ-87W">
+                                <rect key="frame" x="16" y="275" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="One">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="zhb-CE-3f3" firstAttribute="top" secondItem="Tvh-3x-rap" secondAttribute="top" id="6U9-RY-lBt"/>
-                            <constraint firstItem="PcF-TL-KUL" firstAttribute="leading" secondItem="Tvh-3x-rap" secondAttribute="leading" id="EL8-GS-omK"/>
-                            <constraint firstItem="Tvh-3x-rap" firstAttribute="bottom" secondItem="PcF-TL-KUL" secondAttribute="bottom" constant="20" id="c5b-r1-2HF"/>
-                            <constraint firstItem="PcF-TL-KUL" firstAttribute="trailing" secondItem="Tvh-3x-rap" secondAttribute="trailing" id="iza-RX-AII"/>
                             <constraint firstItem="zhb-CE-3f3" firstAttribute="trailing" secondItem="Tvh-3x-rap" secondAttribute="trailing" id="lWH-ZG-bfM"/>
                             <constraint firstItem="zhb-CE-3f3" firstAttribute="leading" secondItem="Tvh-3x-rap" secondAttribute="leading" id="rjS-hl-ew0"/>
                         </constraints>
@@ -742,35 +1014,86 @@
                                     <constraint firstAttribute="height" constant="69" id="Iks-0O-md4"/>
                                     <constraint firstAttribute="width" constant="375" id="umh-9M-rEu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="39"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="37"/>
                                 <color key="textColor" white="0.2040703204" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY8-vT-8yr">
-                                <rect key="frame" x="0.0" y="530" width="375" height="117"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OXH-JE-Ngf">
+                                <rect key="frame" x="16" y="97" width="343" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87059414390000001" green="0.87057775260000003" blue="0.87058883909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco la</string>
+                                <color key="textColor" red="0.26666867729999999" green="0.26666298510000003" blue="0.26666685940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxg-oN-9Zb">
+                                <rect key="frame" x="16" y="536" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="AS9-ld-gHI"/>
-                                    <constraint firstAttribute="height" constant="117" id="gnF-wF-C5Y"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="80"/>
-                                <state key="normal" title="Done">
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Four">
                                     <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <action selector="startGame:" destination="ib7-2o-WpB" eventType="touchUpInside" id="N8x-l1-Yvq"/>
-                                    <action selector="unwindToModeVC:" destination="0GM-MJ-mvv" eventType="touchUpInside" id="WWG-0C-C1m"/>
-                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3O-oM-3e6">
+                                <rect key="frame" x="16" y="449" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Three">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4F-Jg-ogV">
+                                <rect key="frame" x="16" y="362" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.83529411760000005" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Two">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBL-z9-unR">
+                                <rect key="frame" x="16" y="275" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="One">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="1eg-v5-zss" firstAttribute="leading" secondItem="06D-gf-4Yi" secondAttribute="leading" id="7hr-j6-dTd"/>
                             <constraint firstItem="1eg-v5-zss" firstAttribute="trailing" secondItem="06D-gf-4Yi" secondAttribute="trailing" id="Ne2-vR-80N"/>
-                            <constraint firstItem="lY8-vT-8yr" firstAttribute="leading" secondItem="06D-gf-4Yi" secondAttribute="leading" id="R1l-cp-6wu"/>
-                            <constraint firstItem="06D-gf-4Yi" firstAttribute="bottom" secondItem="lY8-vT-8yr" secondAttribute="bottom" constant="20" id="YK9-gp-Tuo"/>
                             <constraint firstItem="1eg-v5-zss" firstAttribute="top" secondItem="06D-gf-4Yi" secondAttribute="top" id="kAe-vK-PcK"/>
-                            <constraint firstItem="lY8-vT-8yr" firstAttribute="trailing" secondItem="06D-gf-4Yi" secondAttribute="trailing" id="xw2-C9-pYT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="06D-gf-4Yi"/>
                     </view>
@@ -801,31 +1124,82 @@
                                 <color key="textColor" white="0.2040703204" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pw6-zw-Vq7">
-                                <rect key="frame" x="0.0" y="530" width="375" height="117"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hmu-X1-8gs">
+                                <rect key="frame" x="16" y="97" width="343" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87059414390000001" green="0.87057775260000003" blue="0.87058883909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco la</string>
+                                <color key="textColor" red="0.26666867729999999" green="0.26666298510000003" blue="0.26666685940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-lE-LsH">
+                                <rect key="frame" x="16" y="536" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="117" id="5ta-GW-ggS"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="GKU-5j-ANV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="80"/>
-                                <state key="normal" title="Done">
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Four">
                                     <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <action selector="startGame:" destination="ib7-2o-WpB" eventType="touchUpInside" id="oUZ-2M-AzQ"/>
-                                    <action selector="unwindToModeVC:" destination="4oE-d8-MXQ" eventType="touchUpInside" id="xSV-9L-nXA"/>
-                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c02-6z-aiQ">
+                                <rect key="frame" x="16" y="449" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Three">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jla-Qd-oUz">
+                                <rect key="frame" x="16" y="362" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.83529411760000005" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Two">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvA-7Q-jbQ">
+                                <rect key="frame" x="16" y="275" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="One">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="B79-Yo-TqQ" firstAttribute="leading" secondItem="kv5-dd-S54" secondAttribute="leading" id="9Rd-Ah-ddE"/>
-                            <constraint firstItem="kv5-dd-S54" firstAttribute="bottom" secondItem="Pw6-zw-Vq7" secondAttribute="bottom" constant="20" id="BM6-HJ-KRh"/>
                             <constraint firstItem="B79-Yo-TqQ" firstAttribute="top" secondItem="kv5-dd-S54" secondAttribute="top" id="Q4z-ze-iWm"/>
-                            <constraint firstItem="Pw6-zw-Vq7" firstAttribute="leading" secondItem="kv5-dd-S54" secondAttribute="leading" id="YCI-cn-tOI"/>
                             <constraint firstItem="B79-Yo-TqQ" firstAttribute="trailing" secondItem="kv5-dd-S54" secondAttribute="trailing" id="hUX-3g-b6i"/>
-                            <constraint firstItem="Pw6-zw-Vq7" firstAttribute="trailing" secondItem="kv5-dd-S54" secondAttribute="trailing" id="jGb-XZ-GeK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kv5-dd-S54"/>
                     </view>
@@ -856,34 +1230,82 @@
                                 <color key="textColor" white="0.2040703204" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TR-Jg-iEg">
-                                <rect key="frame" x="0.0" y="530" width="375" height="117"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="117" id="V3h-T2-N4B"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="byO-c9-mwZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="80"/>
-                                <state key="normal" title="Done">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XO6-lS-ZIu">
+                                <rect key="frame" x="16" y="97" width="343" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87059414390000001" green="0.87057775260000003" blue="0.87058883909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco la</string>
+                                <color key="textColor" red="0.26666867729999999" green="0.26666298510000003" blue="0.26666685940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rND-oK-jPj">
+                                <rect key="frame" x="16" y="536" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Four">
                                     <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <action selector="startGame:" destination="ib7-2o-WpB" eventType="touchUpInside" id="EkP-4F-aIP"/>
-                                    <action selector="unwindToModeVC:" destination="Fdm-IB-tdE" eventType="touchUpInside" id="FWb-aU-sja"/>
-                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Led-jo-yAp">
+                                <rect key="frame" x="16" y="449" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.248093009" green="0.55484634639999997" blue="0.65099704270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Three">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xi-GS-Meh">
+                                <rect key="frame" x="16" y="362" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.83529411760000005" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="Two">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NT6-hU-EQb">
+                                <rect key="frame" x="16" y="275" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.73725490199999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="25"/>
+                                <state key="normal" title="One">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.93333333330000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6TR-Jg-iEg" firstAttribute="trailing" secondItem="L6V-zO-IL2" secondAttribute="trailing" id="492-s0-5LH"/>
-                            <constraint firstItem="6TR-Jg-iEg" firstAttribute="trailing" secondItem="L6V-zO-IL2" secondAttribute="trailing" id="53K-V8-gJl"/>
-                            <constraint firstItem="L6V-zO-IL2" firstAttribute="bottom" secondItem="6TR-Jg-iEg" secondAttribute="bottom" constant="20" id="Ehq-Wp-3h9"/>
                             <constraint firstItem="VKs-I9-7UL" firstAttribute="top" secondItem="L6V-zO-IL2" secondAttribute="top" id="H3i-MS-emg"/>
-                            <constraint firstItem="6TR-Jg-iEg" firstAttribute="leading" secondItem="L6V-zO-IL2" secondAttribute="leading" id="XRZ-uQ-bZ1"/>
-                            <constraint firstItem="L6V-zO-IL2" firstAttribute="bottom" secondItem="6TR-Jg-iEg" secondAttribute="bottom" constant="20" id="aac-i5-GL8"/>
                             <constraint firstItem="VKs-I9-7UL" firstAttribute="leading" secondItem="L6V-zO-IL2" secondAttribute="leading" id="bLo-O3-Jzr"/>
                             <constraint firstItem="VKs-I9-7UL" firstAttribute="trailing" secondItem="L6V-zO-IL2" secondAttribute="trailing" id="t9S-Rw-Lqi"/>
-                            <constraint firstItem="6TR-Jg-iEg" firstAttribute="leading" secondItem="L6V-zO-IL2" secondAttribute="leading" id="wMr-yU-eNf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L6V-zO-IL2"/>
                     </view>
@@ -901,6 +1323,6 @@
         <image name="spin" width="176" height="178"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RIh-de-zJf"/>
+        <segue reference="t1T-ME-QcP"/>
     </inferredMetricsTieBreakers>
 </document>

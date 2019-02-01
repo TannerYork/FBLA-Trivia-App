@@ -14,10 +14,30 @@ class OneVC: UIViewController {
         super.viewDidLoad()
     }
     
+    //MARK: Properties
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var aOne: UIButton!
+    @IBOutlet weak var aTwo: UIButton!
+    @IBOutlet weak var aThree: UIButton!
+    @IBOutlet weak var aFour: UIButton!
+    
+    
     //MARK: Actions
-    @IBAction func returnToModeView(_ sender: Any) {
-        self.performSegue(withIdentifier: "unwindToModesVC", sender: self)
+    @IBAction func didGuessOne(_ sender: Any) {
+        
     }
+    @IBAction func didGuessTwo(_ sender: Any) {
+        
+    }
+    @IBAction func didGuessThree(_ sender: Any) {
+        
+    }
+    @IBAction func didGuessFour(_ sender: Any) {
+        
+    }
+    
+    
+    
     
     
     

@@ -14,15 +14,15 @@ class FirestoreData {
     static let shared = FirestoreData()
     static let data = Firestore.firestore()
     let fileData = Data()
-
+    
     func createSession(onComplete: @escaping (Bool, String) -> Void) {
-        let id = UUID().uuidString
+        //        let id = UUID().uuidString
+        let id = 10
         FirestoreData.data.collection("game-sessions").document("\(id)").setData([
             "id": "\(id)",
-            "Players": ["\(Auth.auth().currentUser!.displayName!)" ],
-            "PlayerOne": 0,
-            "PlayerTwo": 0,
-            "GameActivity": false
+            "GameActivity": false,
+            "Players": [GameSession.shared.localPlayer],
+            "\(GameSession.shared.localPlayer!)": ["DisplayName": GameSession.shared.localPlayer, "Score": 0]
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
@@ -51,144 +51,55 @@ class FirestoreData {
                 })
                 return
             }
-            view.performSegue(withIdentifier: "segueToCountDownVC", sender: view)
+            view.performSegue(withIdentifier: "segueToCategoriesVC", sender: view)
         }
     }
     
     func addPlayer(_ player: User, to session: String, onComplete: @escaping (Bool) -> Void) {
         //Add user to sessions Players array
         let session = FirestoreData.data.collection("game-sessions").document("\(session)")
+        session.setData([player.displayName!: ["DisplayName": GameSession.shared.localPlayer!, "Score": 0]], merge: true)
+        
         session.updateData(["Players" : FieldValue.arrayUnion(["\(player.displayName!)"])]) { err in
             if let err = err {
                 print("Error adding player: \(err)")
                 onComplete(false)
             } else {
-                print("PLayer successfully added!")
-                session.updateData(["ActivePlayers" : FieldValue.arrayUnion(["\(player.displayName!)"])]) { err in
-                    if let err = err {
-                        print("Error removing document: \(err)")
-                        onComplete(false)
-                    } else {
-                        print("Player successfully added!")
-                        onComplete(true)
-                    }
-                }
+                print("Player successfully added!")
+                onComplete(true)
             }
         }
+        
     }
     
     func removePlayer(_ player: String, from session: String, onComplete: @escaping (Bool) -> Void) {
         //Remove player from the session
         let session = FirestoreData.data.collection("game-sessions").document("\(session)")
+        session.updateData([player: FieldValue.delete()])
+        
         session.getDocument { (snapshot, error) in
             if let err = error {
                 print(err.localizedDescription)
             } else {
-                let sessionSnapshot = Session((snapshot?.data())!)
-                
-                if sessionSnapshot.players.contains(where: { (returnedPlayer) -> Bool in
-                    if player == returnedPlayer {
-                        return true
-                    } else {
-                        return false
-                    }
-                }) {
+                if GameSession.shared.players.contains(player) {
+                    
                     session.updateData(["Players" : FieldValue.arrayRemove(["\(player)"])]) { err in
                         if let err = err {
                             print("Error removing document: \(err)")
                             onComplete(false)
                         } else {
                             print("PLayer successfully removed from players!")
-                            if sessionSnapshot.activePlayers.contains(where: { (ply) -> Bool in
-                                if player == (ply) {
-                                    return true
-                                } else {
-                                    return false
-                                }
-                            }) {
-                                session.updateData(["ActivePlayers" : FieldValue.arrayRemove(["\(player)"])]) { err in
-                                    if let err = err {
-                                        print("Error removing document: \(err)")
-                                        onComplete(false)
-                                    } else {
-                                        print("PLayer successfully removed from ActivePlayers!")
-                                        onComplete(true)
-                                    }
-                                }
-                            } else if sessionSnapshot.inActivePlayers.contains(where: { (ply) -> Bool in
-                                if player == (ply ) {
-                                    return true
-                                } else {
-                                    return false
-                                }
-                            }) {
-                                session.updateData(["InActivePlayers" : FieldValue.arrayRemove(["\(player)"])]) { err in
-                                    if let err = err {
-                                        print("Error removing document: \(err)")
-                                        onComplete(false)
-                                    } else {
-                                        print("Player successfully removed form InActivePlayers!")
-                                        onComplete(true)
-                                    }
-                                }
-                            }
-                            
+                            onComplete(true)
                         }
                     }
                 }
                 
-                
-                
             }
         }
-    }
-    
-    func activatePlayer(_ player: User, in session: String, onComplete: @escaping (Bool) -> Void) {
-        //Add user to sessions activeplayers array and remove from in-activePlayers array.
-        let session = FirestoreData.data.collection("game-sessions").document("\(session)")
-        session.updateData(["InActivePlayers" : FieldValue.arrayUnion(["\(player.displayName!)"])]) { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-                onComplete(false)
-            } else {
-                print("Document successfully removed!")
-                session.updateData(["ActivePlayers" : FieldValue.arrayRemove(["\(player.displayName!)"])]) { err in
-                    if let err = err {
-                        print("Error removing document: \(err)")
-                        onComplete(false)
-                    } else {
-                        print("Document successfully removed!")
-                        onComplete(true)
-                    }
-                }
-            }
-        }
-    }
-    
-    func inActivatePlayer(_ player: User, in session: String, onComplete: @escaping (Bool) -> Void) {
-        //Add user to sessions in-activePlayers array and remove from activePlayers array.
-        let session = FirestoreData.data.collection("game-sessions").document("\(session)")
-        session.updateData(["ActivePlayers" : FieldValue.arrayUnion(["\(player.displayName!)"])]) { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-                onComplete(false)
-            } else {
-                print("Document successfully removed!")
-                session.updateData(["InActivePlayers" : FieldValue.arrayRemove(["\(player.displayName!)"])]) { err in
-                    if let err = err {
-                        print("Error removing document: \(err)")
-                        onComplete(false)
-                    } else {
-                        print("Document successfully removed!")
-                        onComplete(true)
-                    }
-                }
-            }
-        }
+        
     }
     
     func deleteSession(_ session: String, onComplete: @escaping (Bool) -> Void) {
-
         let session = FirestoreData.data.collection("game-sessions").document("\(session)")
         session.delete() { err in
             if let err = err {
