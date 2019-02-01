@@ -40,10 +40,10 @@ public class CarnivalWheelSlice: FortuneWheelSliceProtocol {
     
     public var font: UIFont {
         switch style {
-        case .brickRed: return UIFont(name: "Chunkfive", size: 22.0)!
-        case .sandYellow: return UIFont(name: "Lobster 1.3", size: 22.0)!
-        case .babyBlue: return UIFont(name: "Phosphate", size: 22.0)!
-        case .deepBlue: return UIFont(name: "Bebas", size: 22.0)!
+        case .brickRed: return UIFont(name: "Chunkfive", size: 19.0)!
+        case .sandYellow: return UIFont(name: "Lobster 1.3", size: 20.0)!
+        case .babyBlue: return UIFont(name: "Phosphate", size: 15.0)!
+        case .deepBlue: return UIFont(name: "Bebas", size: 18.0)!
         }
     }
     

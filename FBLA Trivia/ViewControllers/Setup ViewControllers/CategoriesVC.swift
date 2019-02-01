@@ -22,12 +22,10 @@ class CategoriesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let slices = [ CarnivalWheelSlice.init(title: "Competitive Events"),
-                       CarnivalWheelSlice.init(title: "Business Managment"),
+                       CarnivalWheelSlice.init(title: "Events"),
                        CarnivalWheelSlice.init(title: "National Officers"),
                        CarnivalWheelSlice.init(title: "Parliamentary Procedure"),
-                       CarnivalWheelSlice.init(title: "Business Ethics"),
-                       CarnivalWheelSlice.init(title: "Buisness Priciples"),
-                       CarnivalWheelSlice.init(title: "Business Organization"),
+                       CarnivalWheelSlice.init(title: "Excel"),
                        CarnivalWheelSlice.init(title: "FBLA History")]
        
         
@@ -37,7 +35,7 @@ class CategoriesVC: UIViewController {
         spinningWheel.slices.enumerated().forEach { (pair) in
             let slice = pair.element as! CarnivalWheelSlice
             let offset = pair.offset
-            switch offset % 4 {
+            switch offset % 3 {
             case 0: slice.style = .brickRed
             case 1: slice.style = .sandYellow
             case 2: slice.style = .babyBlue
@@ -49,7 +47,7 @@ class CategoriesVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToOptionsVC" {
-            GameSession.shared.modesNotComplete = [1,2,3,4,5,6,7,8]
+            GameSession.shared.modesNotComplete = [1,2,3,4,5,6]
         }
     }
     
@@ -64,14 +62,22 @@ class CategoriesVC: UIViewController {
     @IBAction func rotateButton(_ sender: Any) {
         
         if GameSession.shared.modesNotComplete.count == 0 {
-            //Segue to scoreing view
+            //Segue to waiting room and remove other listeners
+            
+            
+            
+            let view = UIApplication.shared.topMostViewController()
+            view?.performSegue(withIdentifier: "segueToGameOverVC", sender: view)
+            
         } else {
             let int = GameSession.shared.modesNotComplete.randomElement()
             let index = GameSession.shared.modesNotComplete.firstIndex(of: int!)
+            print(int as Any)
             GameSession.shared.modesNotComplete.remove(at: index!)
             spinningWheel.startAnimating()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.spinningWheel.startAnimating(fininshIndex: int!) { (finished) in
+                    print("Segueing to \(int!)")
                     self.segueToMode(int!, from: self)
                 }
             }

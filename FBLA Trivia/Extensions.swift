@@ -32,3 +32,16 @@ extension UIApplication {
         return self.keyWindow?.rootViewController?.topMostViewController()
     }
 }
+
+extension UIButton {
+
+    func shoudlAdjustFontSizeAutomatically(_ bool: Bool) {
+        if bool == false {
+        } else {
+            self.titleLabel?.minimumScaleFactor = 0.5
+            self.titleLabel?.numberOfLines = 0
+            self.titleLabel?.adjustsFontSizeToFitWidth = true
+        }
+    }
+    
+}
