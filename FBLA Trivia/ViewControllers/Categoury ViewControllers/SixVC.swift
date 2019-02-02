@@ -108,7 +108,11 @@ class SixVC: UIViewController {
                     self.questionsAnswered = []
                     self.activityIndicator.stopAnimating()
                     UIApplication.shared.endIgnoringInteractionEvents()
-                    self.performSegue(withIdentifier: "unwindToModesVC", sender: self)
+                    if GameSession.shared.modesNotComplete.count == 0 {
+                        self.performSegue(withIdentifier: "segueToGameOverVC", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "unwindToModesVC", sender: self)
+                    }
                 } else {
                     print("Error updating player score")
                 }

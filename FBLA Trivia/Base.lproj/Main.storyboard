@@ -125,7 +125,7 @@
                         <outlet property="playersTV" destination="mRK-Ax-dcd" id="v0J-Yb-Nin"/>
                         <outlet property="sessionIdLabel" destination="39p-Xe-KTm" id="a3q-wD-KpL"/>
                         <segue destination="VyS-Pi-nJ4" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="aLq-yU-8t1"/>
-                        <segue destination="yKe-mZ-XTl" kind="show" identifier="segueToCategoriesVC" id="t1T-ME-QcP"/>
+                        <segue destination="yKe-mZ-XTl" kind="presentation" identifier="segueToCategoriesVC" id="t1T-ME-QcP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRp-IO-Zi3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,8 +294,8 @@
                         <viewLayoutGuide key="safeArea" id="kST-lF-Yce"/>
                     </view>
                     <connections>
-                        <segue destination="ib7-2o-WpB" kind="show" identifier="segueToAdminVC" id="vLc-o4-053"/>
-                        <segue destination="7Rd-MU-EhU" kind="show" identifier="segueToPlayerVC" id="Oab-Tz-e17"/>
+                        <segue destination="ib7-2o-WpB" kind="presentation" identifier="segueToAdminVC" id="vLc-o4-053"/>
+                        <segue destination="7Rd-MU-EhU" kind="presentation" identifier="segueToPlayerVC" id="Oab-Tz-e17"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulm-6U-MZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,7 +396,7 @@
                     <connections>
                         <outlet property="playersTV" destination="W2S-tS-ll4" id="SD6-bI-o32"/>
                         <segue destination="fQB-8M-r9t" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="Utq-8e-qsB"/>
-                        <segue destination="yKe-mZ-XTl" kind="show" identifier="segueToCategoriesVC" id="RIh-de-zJf"/>
+                        <segue destination="yKe-mZ-XTl" kind="presentation" identifier="segueToCategoriesVC" id="RIh-de-zJf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4By-lb-xZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -520,7 +520,7 @@
                         <outlet property="A4" destination="Ikl-QJ-RKv" id="0Zz-yp-WRO"/>
                         <outlet property="textView" destination="7t2-uE-iZG" id="N5H-dC-f17"/>
                         <segue destination="4Wf-qj-QGR" kind="unwind" identifier="unwindToModesVC" unwindAction="unwindToModesVCWithSegue:" id="PYb-Zi-4JN"/>
-                        <segue destination="U3U-M0-67x" kind="show" identifier="segueToGameOverVC" id="7ub-oz-Fre"/>
+                        <segue destination="U3U-M0-67x" kind="presentation" identifier="segueToGameOverVC" id="7ub-oz-Fre"/>
                         <segue destination="4Wf-qj-QGR" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="u1L-SB-R8y"/>
                     </connections>
                 </viewController>
@@ -575,16 +575,16 @@
                     <connections>
                         <outlet property="spinningWheel" destination="SIt-Qk-1si" id="Sef-08-FOU"/>
                         <outlet property="view" destination="AmQ-uk-sxw" id="4gX-od-Du2"/>
-                        <segue destination="vAu-vp-csM" kind="show" identifier="segueTo1" id="amA-vU-WfW"/>
-                        <segue destination="Rf6-F7-oqA" kind="show" identifier="segueTo2" id="o5j-gH-117"/>
-                        <segue destination="1v0-uP-dGe" kind="show" identifier="segueTo3" id="18G-F6-XKA"/>
-                        <segue destination="0GM-MJ-mvv" kind="show" identifier="segueTo4" id="A5D-my-zVi"/>
-                        <segue destination="aRR-1z-qaQ" kind="show" identifier="segueTo5" id="c93-ZW-fFE"/>
-                        <segue destination="Fdm-IB-tdE" kind="show" identifier="segueTo6" id="xSB-Kw-WJo"/>
-                        <segue destination="OOz-Cb-NX1" kind="show" identifier="segueTo7" id="F6J-TY-WdS"/>
-                        <segue destination="4oE-d8-MXQ" kind="show" identifier="segueTo8" id="rQL-tJ-Mdz"/>
+                        <segue destination="vAu-vp-csM" kind="presentation" identifier="segueTo1" id="amA-vU-WfW"/>
+                        <segue destination="Rf6-F7-oqA" kind="presentation" identifier="segueTo2" id="o5j-gH-117"/>
+                        <segue destination="1v0-uP-dGe" kind="presentation" identifier="segueTo3" id="18G-F6-XKA"/>
+                        <segue destination="0GM-MJ-mvv" kind="presentation" identifier="segueTo4" id="A5D-my-zVi"/>
+                        <segue destination="aRR-1z-qaQ" kind="presentation" identifier="segueTo5" id="c93-ZW-fFE"/>
+                        <segue destination="Fdm-IB-tdE" kind="presentation" identifier="segueTo6" id="xSB-Kw-WJo"/>
+                        <segue destination="OOz-Cb-NX1" kind="presentation" identifier="segueTo7" id="F6J-TY-WdS"/>
+                        <segue destination="4oE-d8-MXQ" kind="presentation" identifier="segueTo8" id="rQL-tJ-Mdz"/>
                         <segue destination="ggV-A4-6Gi" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="bU5-Sc-fY7"/>
-                        <segue destination="U3U-M0-67x" kind="show" identifier="segueToGameOverVC" id="TVG-zu-tpn"/>
+                        <segue destination="U3U-M0-67x" kind="presentation" identifier="segueToGameOverVC" id="TVG-zu-tpn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtA-jX-Fxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -708,7 +708,7 @@
                         <outlet property="A4" destination="0bx-N8-4CJ" id="kw8-YZ-hfd"/>
                         <outlet property="textView" destination="vh7-hQ-qDe" id="K8M-nT-bFO"/>
                         <segue destination="6mb-pt-gJj" kind="unwind" identifier="unwindToModesVC" unwindAction="unwindToModesVCWithSegue:" id="FJZ-l1-W5q"/>
-                        <segue destination="U3U-M0-67x" kind="show" identifier="segueToGameOverVC" id="kBi-p3-YqP"/>
+                        <segue destination="U3U-M0-67x" kind="presentation" identifier="segueToGameOverVC" id="kBi-p3-YqP"/>
                         <segue destination="6mb-pt-gJj" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="7Xl-gh-k0v"/>
                     </connections>
                 </viewController>
@@ -833,7 +833,7 @@
                         <outlet property="A4" destination="Qau-Rh-IYd" id="W2K-bS-wbR"/>
                         <outlet property="textView" destination="v1q-Qk-UoR" id="qxe-KC-qE3"/>
                         <segue destination="HuM-Ym-w2W" kind="unwind" identifier="unwindToModesVC" unwindAction="unwindToModesVCWithSegue:" id="o5w-LI-gAr"/>
-                        <segue destination="U3U-M0-67x" kind="show" identifier="segueToGameOverVC" id="ZH5-hz-LP6"/>
+                        <segue destination="U3U-M0-67x" kind="presentation" identifier="segueToGameOverVC" id="ZH5-hz-LP6"/>
                         <segue destination="HuM-Ym-w2W" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="bdo-1h-a6b"/>
                     </connections>
                 </viewController>
@@ -958,7 +958,7 @@
                         <outlet property="A4" destination="GY4-DS-1Hh" id="stY-x9-KIg"/>
                         <outlet property="textView" destination="t6T-mC-oP7" id="OKG-cP-889"/>
                         <segue destination="1uR-xQ-GOB" kind="unwind" identifier="unwindToModesVC" unwindAction="unwindToModesVCWithSegue:" id="Inl-UU-wVL"/>
-                        <segue destination="U3U-M0-67x" kind="show" identifier="segueToGameOverVC" id="ALx-lF-ZPc"/>
+                        <segue destination="U3U-M0-67x" kind="presentation" identifier="segueToGameOverVC" id="ALx-lF-ZPc"/>
                         <segue destination="1uR-xQ-GOB" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="OVJ-f9-rXd"/>
                     </connections>
                 </viewController>
@@ -1189,7 +1189,7 @@
                         <outlet property="A4" destination="Oxg-oN-9Zb" id="HwF-lo-Olg"/>
                         <outlet property="textView" destination="OXH-JE-Ngf" id="InK-ti-Y5u"/>
                         <segue destination="XSH-y9-5Ak" kind="unwind" identifier="unwindToModesVC" unwindAction="unwindToModesVCWithSegue:" id="BVD-bO-5qU"/>
-                        <segue destination="U3U-M0-67x" kind="show" identifier="segueToGameOverVC" id="77Q-p0-CWu"/>
+                        <segue destination="U3U-M0-67x" kind="presentation" identifier="segueToGameOverVC" id="77Q-p0-CWu"/>
                         <segue destination="XSH-y9-5Ak" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="Rpc-sb-91T"/>
                     </connections>
                 </viewController>
@@ -1520,7 +1520,7 @@
                         <outlet property="A4" destination="rND-oK-jPj" id="ER0-J5-Itr"/>
                         <outlet property="textView" destination="XO6-lS-ZIu" id="22F-cD-aFH"/>
                         <segue destination="u3q-eI-yVv" kind="unwind" identifier="unwindToModesVC" unwindAction="unwindToModesVCWithSegue:" id="rjL-F7-vCJ"/>
-                        <segue destination="U3U-M0-67x" kind="show" identifier="segueToGameOverVC" id="him-5p-pB2"/>
+                        <segue destination="U3U-M0-67x" kind="presentation" identifier="segueToGameOverVC" id="him-5p-pB2"/>
                         <segue destination="u3q-eI-yVv" kind="unwind" identifier="unwindToOptionsVC" unwindAction="unwindToOptionsVCWithSegue:" id="chr-ld-QIE"/>
                     </connections>
                 </viewController>
@@ -1534,7 +1534,7 @@
         <image name="spin" width="176" height="178"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7ub-oz-Fre"/>
-        <segue reference="RIh-de-zJf"/>
+        <segue reference="him-5p-pB2"/>
+        <segue reference="t1T-ME-QcP"/>
     </inferredMetricsTieBreakers>
 </document>

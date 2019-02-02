@@ -18,6 +18,9 @@ class ThreeVC: UIViewController {
         A2.shoudlAdjustFontSizeAutomatically(true)
         A3.shoudlAdjustFontSizeAutomatically(true)
         A4.shoudlAdjustFontSizeAutomatically(true)
+        
+        buttons = [A1,A2,A3,A4]
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +55,7 @@ class ThreeVC: UIViewController {
     
     var questionsAnswered: [Question] = []
     var currentScore = 0
+    var buttons: [UIButton]?
     
     var currentQuestion: Question! {
         didSet {
@@ -67,19 +71,28 @@ class ThreeVC: UIViewController {
             }
         }
     }
+
     
     //MARK: Actions
     @IBAction func AnswerTapped(_ sender: UIButton) {
         print(sender.tag)
         if sender.titleLabel!.text == currentQuestion?.correctAnswer {
-            sender.backgroundColor = .green
+            for button in buttons! {
+                if button.tag == sender.tag {
+                    button.backgroundColor = .green
+                }
+            }
             currentScore += 1
             UIApplication.shared.beginIgnoringInteractionEvents()
             sleep(3)
             self.activityIndicator.startAnimating()
             getQuestion()
         } else {
-            sender.backgroundColor = .red
+            for button in buttons! {
+                if button.tag == sender.tag {
+                    button.backgroundColor = .red
+                }
+            }
             UIApplication.shared.beginIgnoringInteractionEvents()
             sleep(3)
             self.activityIndicator.startAnimating()
@@ -108,7 +121,11 @@ class ThreeVC: UIViewController {
                     self.questionsAnswered = []
                     self.activityIndicator.stopAnimating()
                     UIApplication.shared.endIgnoringInteractionEvents()
-                    self.performSegue(withIdentifier: "unwindToModesVC", sender: self)
+                    if GameSession.shared.modesNotComplete.count == 0 {
+                        self.performSegue(withIdentifier: "segueToGameOverVC", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "unwindToModesVC", sender: self)
+                    }
                 } else {
                     print("Error updating player score")
                 }

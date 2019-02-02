@@ -57,7 +57,6 @@ class FirestoreData {
     func addPlayer(_ player: User, to session: String, onComplete: @escaping (Bool) -> Void) {
         //Add user to sessions Players array
         let session = FirestoreData.data.collection("game-sessions").document("\(session)")
-        session.setData([player.displayName!: ["DisplayName": GameSession.shared.localPlayer!, "Score": 0, "isComplete": false]], merge: true)
         
         session.updateData(["Players" : FieldValue.arrayUnion(["\(player.displayName!)"])]) { err in
             if let err = err {
@@ -65,6 +64,7 @@ class FirestoreData {
                 onComplete(false)
             } else {
                 print("Player successfully added!")
+                session.setData([player.displayName!: ["DisplayName": GameSession.shared.localPlayer!, "Score": 0, "isComplete": false]], merge: true)
                 onComplete(true)
             }
         }
@@ -80,19 +80,15 @@ class FirestoreData {
             if let err = error {
                 print(err.localizedDescription)
             } else {
-                if GameSession.shared.players.contains(player) {
-                    
                     session.updateData(["Players" : FieldValue.arrayRemove(["\(player)"])]) { err in
                         if let err = err {
                             print("Error removing document: \(err)")
                             onComplete(false)
                         } else {
-                            print("PLayer successfully removed from players!")
+                            print("Player successfully removed from players!")
                             onComplete(true)
                         }
                     }
-                }
-                
             }
         }
         

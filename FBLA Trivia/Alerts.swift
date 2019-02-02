@@ -81,7 +81,7 @@ class Alerts {
                     GameSession.shared.AdminSession = id
                     view.performSegue(withIdentifier: "segueToAdminVC", sender: view)
                 } else {
-                    self.createGameAlert.message = "Sorry an error accured while setting up session. This means the code is brokenand that you will have to contact the OG developer about it so he can fix it."
+                    self.createGameAlert.message = "Sorry an error accured while setting up session. This means the code is broken and that you will have to contact the OG developer about it so he can fix it."
                 }
             })
         }

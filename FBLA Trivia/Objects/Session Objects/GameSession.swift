@@ -16,7 +16,7 @@ class GameSession {
     
     var localPlayer: String?
     var localPlayerId: String?
-    var modesNotComplete: [Int] = [1,2,3,4,5,6]
+    var modesNotComplete: [Int] = [3]
     var players: [String] = []
     var playerScores: [PlayerScore] = []
     var PlayerSession: String?
@@ -27,11 +27,6 @@ class GameSession {
     var playersCompleteCount = 0
     var playerRanking: [PlayerScore] = []
     
-    
-     func removeListeners() {
-        gameActivityChecker.remove()
-        updateChecker.remove()
-    }
 
     
     func loadData(for tableView: UITableView, in view: UIViewController, onComplete: @escaping (Bool) -> Void) {
@@ -123,19 +118,19 @@ class GameSession {
                 if self.shouldSegueToCategories == true {
                     let view = UIApplication.shared.topMostViewController()
                     self.updateChecker.remove()
+                    print("Removed update checker from view.")
                     view?.performSegue(withIdentifier: "segueToCategoriesVC", sender: view)
                 }
                 if self.playersCompleteCount == self.players.count {
-                    
-                    self.resetData()
-                    
+                                    
                     let view = UIApplication.shared.topMostViewController()
                     view?.performSegue(withIdentifier: "segueToGameOverVC", sender: view)
                     
                 }
             } else if document.exists == false || isPlayerInSession == false {
                 //Unwind to option view cintroller
-                self.gameActivityChecker.remove()
+                GameSession.shared.gameActivityChecker.remove()
+                self.resetData()
                 self.updateChecker.remove()
                 let view = UIApplication.shared.topMostViewController()
                 view!.performSegue(withIdentifier: "unwindToOptionsVC", sender: view )
@@ -144,7 +139,6 @@ class GameSession {
         }
         return listener
     }
-    
     
     func updateScore(for player: String, in session: String, to int: Int, onComplete: @escaping (Bool) -> Void) {
         let session = FirestoreData.data.collection("game-sessions").document("\(session)")
@@ -173,7 +167,14 @@ class GameSession {
 
     
     func resetData() {
-        self.gameActivityChecker.remove()
+        print("Session Data Before Delete:")
+        print("Modes Not Complete: \(modesNotComplete)")
+        print("Players: \(players)")
+        print("Player Session: \(PlayerSession)")
+        print("Admin Session: \(AdminSession)")
+        print("ShouldSegue: \(shouldSegueToCategories)")
+        print("Player Count: \(playersCompleteCount)")
+        
         self.modesNotComplete = [1,2,3,4,5,6]
         self.players.removeAll()
         self.playerScores.removeAll()
@@ -181,5 +182,14 @@ class GameSession {
         self.AdminSession = nil
         self.shouldSegueToCategories = false
         self.playersCompleteCount = 0
+        
+        print("Session Data After Delete:")
+        print("Modes Not Complete: \(modesNotComplete)")
+        print("Players: \(players)")
+        print("Player Session: \(PlayerSession)")
+        print("Admin Session: \(AdminSession)")
+        print("ShouldSegue: \(shouldSegueToCategories)")
+        print("Player Count: \(playersCompleteCount)")
+        
     }
 }

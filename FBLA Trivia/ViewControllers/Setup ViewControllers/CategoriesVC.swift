@@ -13,7 +13,6 @@ import TTFortuneWheel
 class CategoriesVC: UIViewController {
     
     //MARK: Properties
-    var gameChecker: ListenerRegistration!
     var segueNumber: Int?
     
     @IBOutlet weak var spinningWheel: TTFortuneWheel!
@@ -47,7 +46,7 @@ class CategoriesVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToOptionsVC" {
-            GameSession.shared.modesNotComplete = [1,2,3,4,5,6]
+            GameSession.shared.resetData()
         }
     }
     
@@ -60,12 +59,8 @@ class CategoriesVC: UIViewController {
     }
     
     @IBAction func rotateButton(_ sender: Any) {
-        
         if GameSession.shared.modesNotComplete.count == 0 {
             //Segue to waiting room and remove other listeners
-            
-            
-            
             let view = UIApplication.shared.topMostViewController()
             view?.performSegue(withIdentifier: "segueToGameOverVC", sender: view)
             
@@ -78,7 +73,7 @@ class CategoriesVC: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.spinningWheel.startAnimating(fininshIndex: int!) { (finished) in
                     print("Segueing to \(int!)")
-                    self.segueToMode(int!, from: self)
+                    self.segueToMode(3, from: self)
                 }
             }
         }

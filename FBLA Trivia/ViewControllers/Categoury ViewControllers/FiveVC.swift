@@ -35,7 +35,11 @@ class FiveVC: UIViewController {
                     print("Error getting questions")
                     UIApplication.shared.endIgnoringInteractionEvents()
                     self.activityIndicator.stopAnimating()
-                    self.performSegue(withIdentifier: "unwindToModesVC", sender: self)
+                    if GameSession.shared.modesNotComplete.count == 0 {
+                        self.performSegue(withIdentifier: "segueToGameOverVC", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "unwindToModesVC", sender: self)
+                    }
                 } else {
                     self.getQuestion()
                     self.activityIndicator.stopAnimating()

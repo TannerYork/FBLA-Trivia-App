@@ -16,14 +16,14 @@ class PlayerVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         GameSession.shared.loadData(for: playersTV, in: self) { (bool) in
             GameSession.shared.shouldSegueToCategories = true
             GameSession.shared.updateChecker = GameSession.shared.checkForUpdates(for: self.playersTV)
             GameSession.shared.gameActivityChecker = GameSession.shared.checkIfGameIsActive()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
     }
     
     

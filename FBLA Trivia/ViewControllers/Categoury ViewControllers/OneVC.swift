@@ -26,7 +26,7 @@ class OneVC: UIViewController {
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = .whiteLarge
-        activityIndicator.color = UIColor(red:0.94, green:0.74, blue:0.12, alpha:1.0)
+        activityIndicator.color = .black
         view.addSubview(activityIndicator)
         
         activityIndicator.startAnimating()
@@ -110,7 +110,11 @@ class OneVC: UIViewController {
                     self.questionsAnswered = []
                     self.activityIndicator.stopAnimating()
                     UIApplication.shared.endIgnoringInteractionEvents()
-                    self.performSegue(withIdentifier: "unwindToModesVC", sender: self)
+                    if GameSession.shared.modesNotComplete.count == 0 {
+                        self.performSegue(withIdentifier: "segueToGameOverVC", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "unwindToModesVC", sender: self)
+                    }
                 } else {
                     print("Error updating player score")
                 }

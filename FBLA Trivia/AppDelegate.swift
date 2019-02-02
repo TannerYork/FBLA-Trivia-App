@@ -34,17 +34,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("\(player ?? "Error") entered background")
         
         if GameSession.shared.PlayerSession != nil {
+            GameSession.shared.gameActivityChecker.remove()
             FirestoreData.shared.removePlayer(Auth.auth().currentUser!.displayName!, from: GameSession.shared.PlayerSession!) { (bool) in
                 if bool == false {
                     print("Error deleting session after going to background.")
                 } else {
                     GameSession.shared.PlayerSession = nil
+                    print("\(player) was removed from the session.")
+                    GameSession.shared.resetData()
                 }
             }
         } else if GameSession.shared.AdminSession != nil {
+            GameSession.shared.gameActivityChecker.remove()
             FirestoreData.shared.deleteSession(GameSession.shared.AdminSession!) { (bool) in
                 if bool == true {
                     print("Session deleted")
+                    GameSession.shared.resetData()
                 } else {
                     print("Error, session not deleted.")
                 }

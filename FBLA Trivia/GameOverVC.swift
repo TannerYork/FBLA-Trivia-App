@@ -14,6 +14,7 @@ class GameOverVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gameChecker = GameSession.shared.checkForUpdates(for: playersTableView)
+        GameSession.shared.gameActivityChecker.remove()
     }
 
     //MARK: Properties
@@ -25,11 +26,36 @@ class GameOverVC: UIViewController {
     //MARK: Actions
     @IBAction func didLeaveGame(_ sender: Any) {
         self.gameChecker.remove()
-        self.performSegue(withIdentifier: "unwindToOptionsVC", sender: self)
+        print("Admin: \(String(describing: GameSession.shared.PlayerSession))")
+        print("Player: \(String(describing: GameSession.shared.AdminSession))")
+        if GameSession.shared.PlayerSession != nil {
+            FirestoreData.shared.removePlayer(GameSession.shared.localPlayer!, from: GameSession.shared.PlayerSession!) { (bool) in
+                if bool == false {
+                    print("Error removing player from GAMEOVER VIEW")
+                    self.gameChecker.remove()
+                    GameSession.shared.resetData()
+                    self.performSegue(withIdentifier: "unwindToOptionsVC", sender: self)
+                } else {
+                    self.gameChecker.remove()
+                    GameSession.shared.resetData()
+                    self.performSegue(withIdentifier: "unwindToOptionsVC", sender: self)
+                }
+            }
+        } else if GameSession.shared.AdminSession != nil {
+            FirestoreData.shared.deleteSession(GameSession.shared.AdminSession!) { (bool) in
+                if bool == false {
+                    print("Error removing player from GAMEOVER VIEW")
+                    self.gameChecker.remove()
+                    GameSession.shared.resetData()
+                    self.performSegue(withIdentifier: "unwindToOptionsVC", sender: self)
+                } else {
+                    self.gameChecker.remove()
+                    GameSession.shared.resetData()
+                    self.performSegue(withIdentifier: "unwindToOptionsVC", sender: self)
+                }
+            }
+        }
     }
-    
-    
-    
 }
 
 extension GameOverVC: UITabBarDelegate, UITableViewDataSource {
