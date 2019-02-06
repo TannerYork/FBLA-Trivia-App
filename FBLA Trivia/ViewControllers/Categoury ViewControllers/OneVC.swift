@@ -72,18 +72,15 @@ class OneVC: UIViewController {
     
     //MARK: Actions
     @IBAction func AnswerTapped(_ sender: UIButton) {
+        UIApplication.shared.beginIgnoringInteractionEvents()
         print(sender.tag)
         if sender.titleLabel!.text == currentQuestion?.correctAnswer {
             sender.backgroundColor = .green
             currentScore += 1
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            sleep(3)
             self.activityIndicator.startAnimating()
             getQuestion()
         } else {
             sender.backgroundColor = .red
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            sleep(3)
             self.activityIndicator.startAnimating()
             getQuestion()
         }
@@ -91,8 +88,9 @@ class OneVC: UIViewController {
     
     func getQuestion() {
         if FBLAHistory.shared.questions.count > 0 {
-            let index = Int.random(in: 0..<FBLAHistory.shared.questions.count)
             setColors()
+            let index = Int.random(in: 0..<FBLAHistory.shared.questions.count)
+            print("\(index) was removed.")
             currentQuestion = FBLAHistory.shared.questions[index]
             FBLAHistory.shared.questions.remove(at: index)
             activityIndicator.stopAnimating()

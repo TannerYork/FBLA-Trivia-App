@@ -18,9 +18,6 @@ class ThreeVC: UIViewController {
         A2.shoudlAdjustFontSizeAutomatically(true)
         A3.shoudlAdjustFontSizeAutomatically(true)
         A4.shoudlAdjustFontSizeAutomatically(true)
-        
-        buttons = [A1,A2,A3,A4]
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +52,6 @@ class ThreeVC: UIViewController {
     
     var questionsAnswered: [Question] = []
     var currentScore = 0
-    var buttons: [UIButton]?
     
     var currentQuestion: Question! {
         didSet {
@@ -75,26 +71,14 @@ class ThreeVC: UIViewController {
     
     //MARK: Actions
     @IBAction func AnswerTapped(_ sender: UIButton) {
-        print(sender.tag)
+        UIApplication.shared.beginIgnoringInteractionEvents()
         if sender.titleLabel!.text == currentQuestion?.correctAnswer {
-            for button in buttons! {
-                if button.tag == sender.tag {
-                    button.backgroundColor = .green
-                }
-            }
+            showCorrectAndIncorrect(forAnswer: currentQuestion.correctAnswer, sender: sender)
             currentScore += 1
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            sleep(3)
             self.activityIndicator.startAnimating()
             getQuestion()
         } else {
-            for button in buttons! {
-                if button.tag == sender.tag {
-                    button.backgroundColor = .red
-                }
-            }
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            sleep(3)
+            showCorrectAndIncorrect(forAnswer: currentQuestion.correctAnswer, sender: sender)
             self.activityIndicator.startAnimating()
             getQuestion()
         }
@@ -143,6 +127,25 @@ class ThreeVC: UIViewController {
         A2.backgroundColor = backgroundColors.randomElement()
         A3.backgroundColor = backgroundColors.randomElement()
         A4.backgroundColor = backgroundColors.randomElement()
+    }
+    
+    func showCorrectAndIncorrect(forAnswer correct: String, sender button: UIButton) {
+        if button.titleLabel!.text == correct {
+            button.backgroundColor = .green
+        } else {
+            button.backgroundColor = .red
+            if A1.titleLabel!.text == correct {
+                A1.backgroundColor = .green
+            } else {
+                if A2.titleLabel!.text == correct {
+                    A2.backgroundColor = .green
+                } else if A3.titleLabel?.text == correct {
+                    A3.backgroundColor = .green
+                } else if A4.titleLabel!.text == correct {
+                    A4.backgroundColor = .green
+                }
+            }
+        }
     }
     
     

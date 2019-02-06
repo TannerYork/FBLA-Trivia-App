@@ -73,7 +73,7 @@ class CategoriesVC: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.spinningWheel.startAnimating(fininshIndex: int!) { (finished) in
                     print("Segueing to \(int!)")
-                    self.segueToMode(3, from: self)
+                    self.segueToMode(int!, from: self)
                 }
             }
         }

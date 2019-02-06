@@ -37,8 +37,6 @@
 		E5119A6821F0C22A00D46F36 /* Chunkfive.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5119A6421F0C22700D46F36 /* Chunkfive.otf */; };
 		E5119A6921F0C22A00D46F36 /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5119A6521F0C22900D46F36 /* Lobster_1.3.otf */; };
 		E5119A6A21F0C22A00D46F36 /* Phosphate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = E5119A6621F0C22A00D46F36 /* Phosphate.ttc */; };
-		E5119A6C21F0D2EA00D46F36 /* SevenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A6B21F0D2EA00D46F36 /* SevenVC.swift */; };
-		E5119A6E21F0D30000D46F36 /* EightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5119A6D21F0D30000D46F36 /* EightVC.swift */; };
 		E52939A022029F9A00578886 /* delicious.otf in Resources */ = {isa = PBXBuildFile; fileRef = E529399F22029F9A00578886 /* delicious.otf */; };
 		E52939A22203441300578886 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52939A12203441300578886 /* Question.swift */; };
 		E52939A42203462300578886 /* QuestionsLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52939A32203462300578886 /* QuestionsLists.swift */; };
@@ -46,6 +44,7 @@
 		E52939AB2204347C00578886 /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52939AA2204347C00578886 /* PlayerScore.swift */; };
 		E52939AD2204ACF000578886 /* GameOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52939AC2204ACF000578886 /* GameOverVC.swift */; };
 		E52939AF2204AE5B00578886 /* PlayerScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52939AE2204AE5B00578886 /* PlayerScoreCell.swift */; };
+		E579B8A3220A5206007DAFF8 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E579B8A2220A5206007DAFF8 /* Audio.swift */; };
 		E873F4654812290D01CD1E3E /* Pods_FBLA_Trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4F7685D55D3B0CF5398285 /* Pods_FBLA_Trivia.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,8 +108,6 @@
 		E5119A6421F0C22700D46F36 /* Chunkfive.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chunkfive.otf; sourceTree = "<group>"; };
 		E5119A6521F0C22900D46F36 /* Lobster_1.3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster_1.3.otf; sourceTree = "<group>"; };
 		E5119A6621F0C22A00D46F36 /* Phosphate.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phosphate.ttc; sourceTree = "<group>"; };
-		E5119A6B21F0D2EA00D46F36 /* SevenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenVC.swift; sourceTree = "<group>"; };
-		E5119A6D21F0D30000D46F36 /* EightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightVC.swift; sourceTree = "<group>"; };
 		E529399F22029F9A00578886 /* delicious.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = delicious.otf; sourceTree = "<group>"; };
 		E52939A12203441300578886 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		E52939A32203462300578886 /* QuestionsLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsLists.swift; sourceTree = "<group>"; };
@@ -118,6 +115,7 @@
 		E52939AA2204347C00578886 /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
 		E52939AC2204ACF000578886 /* GameOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverVC.swift; sourceTree = "<group>"; };
 		E52939AE2204AE5B00578886 /* PlayerScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreCell.swift; sourceTree = "<group>"; };
+		E579B8A2220A5206007DAFF8 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		F88318BA2201D2CF0D748294 /* Pods-FBLA TriviaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA TriviaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA TriviaUITests/Pods-FBLA TriviaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,9 +197,9 @@
 			children = (
 				E5119A0021EE4F1E00D46F36 /* AppDelegate.swift */,
 				E52939A5220398E700578886 /* Extensions.swift */,
+				E579B8A2220A5206007DAFF8 /* Audio.swift */,
 				E5119A5121EE7D2C00D46F36 /* Alerts.swift */,
 				E5119A3021EE501A00D46F36 /* ViewControllers */,
-				E52939AC2204ACF000578886 /* GameOverVC.swift */,
 				E52939A8220404EB00578886 /* TableView Cells */,
 				E5119A4C21EE7CD200D46F36 /* Objects */,
 				E5119A0421EE4F1E00D46F36 /* Main.storyboard */,
@@ -238,6 +236,7 @@
 				E5119A2E21EE501000D46F36 /* MainVC.swift */,
 				E5119A4921EE763200D46F36 /* Setup ViewControllers */,
 				E5119A3C21EE759B00D46F36 /* Categoury ViewControllers */,
+				E52939AC2204ACF000578886 /* GameOverVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -264,8 +263,6 @@
 				E5119A4321EE760300D46F36 /* FourVC.swift */,
 				E5119A4521EE761A00D46F36 /* FiveVC.swift */,
 				E5119A4721EE762900D46F36 /* SixVC.swift */,
-				E5119A6B21F0D2EA00D46F36 /* SevenVC.swift */,
-				E5119A6D21F0D30000D46F36 /* EightVC.swift */,
 			);
 			path = "Categoury ViewControllers";
 			sourceTree = "<group>";
@@ -595,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E579B8A3220A5206007DAFF8 /* Audio.swift in Sources */,
 				E52939A6220398E700578886 /* Extensions.swift in Sources */,
 				E5119A4421EE760300D46F36 /* FourVC.swift in Sources */,
 				E52939AD2204ACF000578886 /* GameOverVC.swift in Sources */,
@@ -607,7 +605,6 @@
 				E5119A4E21EE7D0600D46F36 /* FirestoreData.swift in Sources */,
 				E5119A5021EE7D1900D46F36 /* GameSession.swift in Sources */,
 				E52939A22203441300578886 /* Question.swift in Sources */,
-				E5119A6C21F0D2EA00D46F36 /* SevenVC.swift in Sources */,
 				E5119A4821EE762900D46F36 /* SixVC.swift in Sources */,
 				E52939AB2204347C00578886 /* PlayerScore.swift in Sources */,
 				E5119A4221EE75F100D46F36 /* ThreeVC.swift in Sources */,
@@ -618,7 +615,6 @@
 				E5119A3B21EE758900D46F36 /* CategoriesVC.swift in Sources */,
 				E5119A3721EE752D00D46F36 /* AdminVC.swift in Sources */,
 				E5119A2F21EE501000D46F36 /* MainVC.swift in Sources */,
-				E5119A6E21F0D30000D46F36 /* EightVC.swift in Sources */,
 				E5119A3921EE754E00D46F36 /* PlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

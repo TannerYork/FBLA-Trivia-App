@@ -70,18 +70,15 @@ class FourVC: UIViewController {
     
     //MARK: Actions
     @IBAction func AnswerTapped(_ sender: UIButton) {
+        UIApplication.shared.beginIgnoringInteractionEvents()
         print(sender.tag)
         if sender.titleLabel!.text == currentQuestion?.correctAnswer {
             sender.backgroundColor = .green
             currentScore += 1
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            sleep(3)
             self.activityIndicator.startAnimating()
             getQuestion()
         } else {
             sender.backgroundColor = .red
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            sleep(3)
             self.activityIndicator.startAnimating()
             getQuestion()
         }
