@@ -13,7 +13,14 @@ import TTFortuneWheel
 class CategoriesVC: UIViewController {
     
     //MARK: Properties
+    @IBOutlet weak var scoreLable: UILabel!
+        
     var segueNumber: Int?
+    var score: Int! {
+        didSet{
+            scoreLable.text = "Score: \(score!)"
+        }
+    }
     
     @IBOutlet weak var spinningWheel: TTFortuneWheel!
     
@@ -40,6 +47,14 @@ class CategoriesVC: UIViewController {
             case 2: slice.style = .babyBlue
             case 3: slice.style = .deepBlue
             default: slice.style = .brickRed
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        for playerScore in GameSession.shared.playerScores {
+            if playerScore.name == GameSession.shared.localPlayer {
+                score = playerScore.score
             }
         }
     }
