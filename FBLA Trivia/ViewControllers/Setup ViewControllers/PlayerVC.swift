@@ -30,9 +30,12 @@ class PlayerVC: UIViewController {
     //MARK: Actions
     @IBAction func leaveGame(_ sender: Any) {
         //Remove player from session and return them to the game options.
+        GameSession.shared.gameActivityChecker.remove()
+        GameSession.shared.updateChecker.remove()
         FirestoreData.shared.removePlayer(GameSession.shared.localPlayer!, from: GameSession.shared.PlayerSession!) { (completion) in
             if completion == true {
                 self.dismiss(animated: true)
+                GameSession.shared.resetData()
             } else {
                 print("ERROR!! Player was not remove from session!")
             }
