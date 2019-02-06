@@ -73,12 +73,12 @@ class ThreeVC: UIViewController {
     @IBAction func AnswerTapped(_ sender: UIButton) {
         UIApplication.shared.beginIgnoringInteractionEvents()
         if sender.titleLabel!.text == currentQuestion?.correctAnswer {
-            showCorrectAndIncorrect(forAnswer: currentQuestion.correctAnswer, sender: sender)
+            sender.titleLabel?.textColor = .green
             currentScore += 1
             self.activityIndicator.startAnimating()
             getQuestion()
         } else {
-            showCorrectAndIncorrect(forAnswer: currentQuestion.correctAnswer, sender: sender)
+            sender.titleLabel?.textColor = .red
             self.activityIndicator.startAnimating()
             getQuestion()
         }
@@ -127,26 +127,11 @@ class ThreeVC: UIViewController {
         A2.backgroundColor = backgroundColors.randomElement()
         A3.backgroundColor = backgroundColors.randomElement()
         A4.backgroundColor = backgroundColors.randomElement()
+        
+        A1.titleLabel?.textColor = UIColor(red:0.94, green:0.93, blue:0.92, alpha:1.0)
+        A2.titleLabel?.textColor = UIColor(red:0.94, green:0.93, blue:0.92, alpha:1.0)
+        A3.titleLabel?.textColor = UIColor(red:0.94, green:0.93, blue:0.92, alpha:1.0)
+        A4.titleLabel?.textColor = UIColor(red:0.94, green:0.93, blue:0.92, alpha:1.0)
     }
-    
-    func showCorrectAndIncorrect(forAnswer correct: String, sender button: UIButton) {
-        if button.titleLabel!.text == correct {
-            button.backgroundColor = .green
-        } else {
-            button.backgroundColor = .red
-            if A1.titleLabel!.text == correct {
-                A1.backgroundColor = .green
-            } else {
-                if A2.titleLabel!.text == correct {
-                    A2.backgroundColor = .green
-                } else if A3.titleLabel?.text == correct {
-                    A3.backgroundColor = .green
-                } else if A4.titleLabel!.text == correct {
-                    A4.backgroundColor = .green
-                }
-            }
-        }
-    }
-    
     
 }

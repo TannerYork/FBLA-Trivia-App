@@ -77,12 +77,12 @@ class FiveVC: UIViewController {
             UIApplication.shared.beginIgnoringInteractionEvents()
             print(sender.tag)
             if sender.titleLabel!.text == currentQuestion?.correctAnswer {
-                sender.backgroundColor = .green
+                sender.titleLabel?.textColor = .green
                 currentScore += 1
                 self.activityIndicator.startAnimating()
                 getQuestion()
             } else {
-                sender.backgroundColor = .red
+                sender.titleLabel?.textColor = .red
                 self.activityIndicator.startAnimating()
                 getQuestion()
             }
@@ -118,16 +118,21 @@ class FiveVC: UIViewController {
             }
         }
         
-        func setColors() {
-            let backgroundColors = [UIColor(red:0.18, green:0.34, blue:0.38, alpha:1.0),
-                                    UIColor(red:0.94, green:0.74, blue:0.12, alpha:1.0),
-                                    UIColor(red:0.85, green:0.56, blue:0.22, alpha:1.0),
-                                    UIColor(red:0.24, green:0.56, blue:0.65, alpha:1.0)]
-            A1.backgroundColor = backgroundColors.randomElement()
-            A2.backgroundColor = backgroundColors.randomElement()
-            A3.backgroundColor = backgroundColors.randomElement()
-            A4.backgroundColor = backgroundColors.randomElement()
-        }
+    func setColors() {
+        let backgroundColors = [UIColor(red:0.18, green:0.34, blue:0.38, alpha:1.0),
+                                UIColor(red:0.94, green:0.74, blue:0.12, alpha:1.0),
+                                UIColor(red:0.85, green:0.56, blue:0.22, alpha:1.0),
+                                UIColor(red:0.24, green:0.56, blue:0.65, alpha:1.0)]
+        A1.backgroundColor = backgroundColors.randomElement()
+        A2.backgroundColor = backgroundColors.randomElement()
+        A3.backgroundColor = backgroundColors.randomElement()
+        A4.backgroundColor = backgroundColors.randomElement()
+        
+        A1.titleLabel?.textColor = UIColor(red:0.94, green:0.93, blue:0.92, alpha:1.0)
+        A2.titleLabel?.textColor = UIColor(red:0.94, green:0.93, blue:0.92, alpha:1.0)
+        A3.titleLabel?.textColor = UIColor(red:0.94, green:0.93, blue:0.92, alpha:1.0)
+        A4.titleLabel?.textColor = UIColor(red:0.94, green:0.93, blue:0.92, alpha:1.0)
+    }
         
         
 }
