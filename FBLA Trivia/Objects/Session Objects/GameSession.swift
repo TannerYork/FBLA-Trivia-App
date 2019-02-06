@@ -16,7 +16,7 @@ class GameSession {
     
     var localPlayer: String?
     var localPlayerId: String?
-    var modesNotComplete: [Int] = [3]
+    var modesNotComplete: [Int] = [1,2,3,4,5,6]
     var players: [String] = []
     var playerScores: [PlayerScore] = []
     var PlayerSession: String?
