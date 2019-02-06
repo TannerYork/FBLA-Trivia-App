@@ -118,7 +118,7 @@ class SixVC: UIViewController {
         }
     }
     
-    func setColors() {func setColors() {
+    func setColors() {
         let backgroundColors = [UIColor(red:0.18, green:0.34, blue:0.38, alpha:1.0),
                                 UIColor(red:0.94, green:0.74, blue:0.12, alpha:1.0),
                                 UIColor(red:0.85, green:0.56, blue:0.22, alpha:1.0),
