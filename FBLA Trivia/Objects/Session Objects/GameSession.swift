@@ -63,13 +63,16 @@ class GameSession {
             self.playerScores.removeAll()
             let players = data["Players"] as! [String]
             for player in players {
-                let playerToAdd = data["\(player)"] as! [String: Any]
-                let playerScoreToAdd =  PlayerScore(name: playerToAdd["DisplayName"] as! String,
-                                                    score: playerToAdd["Score"] as! Int,
-                                                    isComplete: playerToAdd["isComplete"] as! Bool)
-                self.playerScores.append(playerScoreToAdd)
-                if playerScoreToAdd.isComplete == true {
-                    self.playersCompleteCount += 1
+                    let playerToAdd = data["\(player)"] as? [String: Any]
+                if playerToAdd != nil {
+                    let playerScoreToAdd =  PlayerScore(name: playerToAdd!["DisplayName"] as! String,
+                                                        score: playerToAdd!["Score"] as! Int,
+                                                        isComplete: playerToAdd!["isComplete"] as! Bool)
+                    self.playerScores.append(playerScoreToAdd)
+                    if playerScoreToAdd.isComplete == true {
+                        self.playersCompleteCount += 1
+                        
+                    }
                 }
             }
             
@@ -95,13 +98,15 @@ class GameSession {
             self.playerScores.removeAll()
             let players = data["Players"] as! [String]
             for player in players {
-            let playerToAdd = data["\(player)"] as! [String: Any]
-            let playerScoreToAdd =  PlayerScore(name: playerToAdd["DisplayName"] as! String,
-                                                score: playerToAdd["Score"] as! Int,
-                                                isComplete: playerToAdd["isComplete"] as! Bool)
-            self.playerScores.append(playerScoreToAdd)
-                if playerScoreToAdd.isComplete == true {
-                    self.playersCompleteCount += 1
+            let playerToAdd = data["\(player)"] as? [String: Any]
+                if playerToAdd != nil {
+                    let playerScoreToAdd =  PlayerScore(name: playerToAdd!["DisplayName"] as! String,
+                                                        score: playerToAdd!["Score"] as! Int,
+                                                        isComplete: playerToAdd!["isComplete"] as! Bool)
+                    self.playerScores.append(playerScoreToAdd)
+                    if playerScoreToAdd.isComplete == true {
+                        self.playersCompleteCount += 1
+                    }
                 }
             }
             

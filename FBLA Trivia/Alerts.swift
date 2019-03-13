@@ -15,7 +15,7 @@ class Alerts {
     static let shared = Alerts()
     
     //MARK: Constants
-     let createGameAlert = UIAlertController(title: "Create Game", message: "Once you hit enter a special session id will be shown, give this to your firends so they can join the game.", preferredStyle: .alert)
+     let createGameAlert = UIAlertController(title: "Create Game", message: "Once you hit enter a special session id will be shown, give this to your friends so they can join the game.", preferredStyle: .alert)
     
      let joinGameAlert = UIAlertController(title: "Join Game", message: "Enter the id of the game session.", preferredStyle: .alert)
     
